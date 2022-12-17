@@ -1,0 +1,28 @@
+@import 'normalize.css';
+
+:root {
+    --primary-color: #411636cc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('/assets/fonts/Inter.woff2');
+    font-weight: 600;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
