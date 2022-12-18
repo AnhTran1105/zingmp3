@@ -1,0 +1,28 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 240px;
+    background-color: var(--sidebar-bg);
+}
+
+.logo-container {
+    height: 70px;
+    padding: 0 25px 0 28px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 40px;
+    display: inline-block;
+    background: var(--img-logo-mp3) 50% / contain no-repeat;
+}
+
+.navbar {
+}
+
+.nav-item {
+}

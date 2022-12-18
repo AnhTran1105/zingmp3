@@ -1,7 +1,23 @@
 @import 'normalize.css';
 
 :root {
-    --primary-color: #411636cc;
+    --img-logo-mp3: url(https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg);
+
+    --sidebar-bg: #1b263a;
+    --layout-bg: #0f1a2e;
+    --layout-header-bg: rgba(15, 26, 46, 0.8);
+    --player-bg: #111f3b;
+    --sidebar-popup-bg: #1d2a49;
+    --primary-bg: #173b45;
+    --gradient-latest-section-artist: linear-gradient(286.07deg, rgba(15, 26, 46, 0.95) 55.21%, rgba(15, 26, 46, 0.6));
+    --alpha-layout-bg: rgba(16, 31, 63, 0.8);
+    --queue-player-popup-bg: #223c75;
+    --blur-queue-bg: rgba(16, 31, 63, 0.9019607843137255);
+    --purple-primary: #158370;
+    --link-text-hover: #0daf94;
+    --chart-bg-img-alpha: rgba(16, 31, 63, 0.9);
+    --chart-box-bg-alpha: hsla(0, 0%, 100%, 0.05);
+    --linear-gradient-bg: linear-gradient(180deg, #1b2f5a, #182e5d);
 }
 
 * {
@@ -26,3 +42,20 @@ body {
     line-height: 1.5;
     text-rendering: optimizeSpeed;
 }
+
+// [data-theme='blue'] {
+//     --layout-bg: #0f1a2e;
+//     --layout-header-bg: rgba(15, 26, 46, 0.8);
+//     --player-bg: #111f3b;
+//     --sidebar-popup-bg: #1d2a49;
+//     --primary-bg: #173b45;
+//     --gradient-latest-section-artist: linear-gradient(286.07deg, rgba(15, 26, 46, 0.95) 55.21%, rgba(15, 26, 46, 0.6));
+//     --alpha-layout-bg: rgba(16, 31, 63, 0.8);
+//     --queue-player-popup-bg: #223c75;
+//     --blur-queue-bg: rgba(16, 31, 63, 0.9019607843137255);
+//     --purple-primary: #158370;
+//     --link-text-hover: #0daf94;
+//     --chart-bg-img-alpha: rgba(16, 31, 63, 0.9);
+//     --chart-box-bg-alpha: hsla(0, 0%, 100%, 0.05);
+//     --linear-gradient-bg: linear-gradient(180deg, #1b2f5a, #182e5d);
+// }
