@@ -26,3 +26,22 @@
 
 .nav-item {
 }
+
+.live-icon {
+    width: 20px;
+}
+
+.sidebar-divide {
+    position: relative;
+    height: 1px;
+    margin: 15px 0;
+}
+
+.sidebar-divide::after {
+    content: '';
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    top: 0;
+    border-top: solid 1px var(--border-primary);
+}

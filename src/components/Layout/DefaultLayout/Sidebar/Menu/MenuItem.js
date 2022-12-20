@@ -4,12 +4,23 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-function MenuItem({ title, to, icon, isActive }) {
+function MenuItem({ title, to, icon1, icon2, endIcon }) {
+    let activeStyles = {
+        marginLeft: 0,
+        backgroundColor: 'var(--alpha-bg)',
+        color: 'var(--text-item-hover)',
+        borderLeft: '3px solid var(--purple-primary)',
+    };
+
     return (
-        <NavLink className={cx('nav')} to={to}>
-            <span className={cx('icon')}>{icon}</span>
-            <span className={cx('title')}>{title}</span>
-        </NavLink>
+        <div className={cx('wrapper')}>
+            <NavLink className={cx('nav')} to={to} style={({ isActive }) => (isActive ? activeStyles : undefined)}>
+                <span className={cx('icon')}>{icon1}</span>
+                <span className={cx('title')}>{title}</span>
+                <span className={cx('icon')}>{icon2}</span>
+                <span className={cx('end-icon')}>{endIcon}</span>
+            </NavLink>
+        </div>
     );
 }
 

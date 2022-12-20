@@ -1,8 +1,22 @@
 import classNames from 'classnames/bind';
-import { PlaylistIcon } from '~/components/Icons';
+import {
+    LiveIcon,
+    MenuIcon,
+    MvIcon,
+    NewsFeedIcon,
+    NoteIcon,
+    PlateChartIcon,
+    PlateIcon,
+    PlateNoteIcon,
+    PlaylistIcon,
+    StarIcon,
+} from '~/components/Icons';
+import config from '~/config';
 import Menu from './Menu';
 import MenuItem from './Menu/MenuItem';
 import styles from './Sidebar.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay } from '@fortawesome/free-regular-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -13,7 +27,66 @@ function Sidebar() {
                 <div className={cx('logo')}></div>
             </div>
             <Menu>
-                <MenuItem title="Cá nhân" icon={<PlaylistIcon />}></MenuItem>
+                <MenuItem
+                    title="Cá Nhân"
+                    to={config.routes.personal}
+                    icon1={<PlaylistIcon />}
+                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                ></MenuItem>
+                <MenuItem
+                    title="Khám Phá"
+                    to={config.routes.discovery}
+                    icon1={<PlateIcon />}
+                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                ></MenuItem>
+                <MenuItem
+                    title="#zingchart"
+                    to={config.routes.chart}
+                    icon1={<PlateChartIcon />}
+                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                ></MenuItem>
+                <MenuItem
+                    title="Radio"
+                    to={config.routes.radio}
+                    icon1={<PlateNoteIcon />}
+                    icon2={<LiveIcon />}
+                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                ></MenuItem>
+                <MenuItem
+                    title="Theo Dõi"
+                    to={config.routes.following}
+                    icon1={<NewsFeedIcon />}
+                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                ></MenuItem>
+            </Menu>
+            <div className={cx('sidebar-divide')}></div>
+            <Menu>
+                <MenuItem
+                    title="Nhạc Mới"
+                    to={config.routes.newSong}
+                    icon1={<NoteIcon />}
+                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                >
+                    {' '}
+                </MenuItem>
+                <MenuItem
+                    title="Thể Loại"
+                    to={config.routes.genres}
+                    icon1={<MenuIcon />}
+                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                ></MenuItem>
+                <MenuItem
+                    title="Top 100"
+                    to={config.routes.top}
+                    icon1={<StarIcon />}
+                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                ></MenuItem>
+                <MenuItem
+                    title="MV"
+                    to={config.routes.mv}
+                    icon1={<MvIcon />}
+                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                ></MenuItem>
             </Menu>
         </div>
     );

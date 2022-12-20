@@ -2,7 +2,7 @@
 
 :root {
     --img-logo-mp3: url(https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg);
-
+    --border-primary: hsla(0, 0%, 100%, 0.1);
     --sidebar-bg: #1b263a;
     --layout-bg: #0f1a2e;
     --layout-header-bg: rgba(15, 26, 46, 0.8);
@@ -18,12 +18,18 @@
     --chart-bg-img-alpha: rgba(16, 31, 63, 0.9);
     --chart-box-bg-alpha: hsla(0, 0%, 100%, 0.05);
     --linear-gradient-bg: linear-gradient(180deg, #1b2f5a, #182e5d);
+    --alpha-bg: hsla(0, 0%, 100%, 0.1);
+    --text-item-hover: #fff;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
 }
 
 html {
@@ -41,6 +47,7 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+    letter-spacing: 0.03px;
 }
 
 // [data-theme='blue'] {
