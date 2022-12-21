@@ -21,12 +21,6 @@
     background: var(--img-logo-mp3) 50% / contain no-repeat;
 }
 
-.navbar {
-}
-
-.nav-item {
-}
-
 .live-icon {
     width: 20px;
 }
@@ -44,4 +38,107 @@
     right: 25px;
     top: 0;
     border-top: solid 1px var(--border-primary);
+}
+
+.vertical-scrollbar {
+    position: relative;
+    overflow-y: auto;
+    height: 600px;
+}
+
+.menu {
+    position: absolute;
+    inset: 0px;
+    overflow: hidden scroll;
+}
+
+.track-vertical {
+    position: absolute;
+    width: 4px;
+    transition: opacity 200ms ease 0s;
+    opacity: 0;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    z-index: 100;
+}
+
+.thumb-vertical {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 334px;
+    transform: translateY(0px);
+    background-color: var(--scroll-thumb-bg);
+    border-radius: 2px;
+}
+
+.menu-library {
+    .menu-title {
+        display: flex;
+        color: #fff;
+        font-size: 12px;
+        margin: 0 28px 8px;
+        padding-top: 8px;
+        justify-content: space-between;
+        line-height: 28px;
+
+        p {
+            font-weight: 700;
+        }
+
+        .icon {
+            border-radius: 50%;
+            padding: 5px;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--alpha-bg);
+            }
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    &:hover {
+        .title-icon {
+            display: block !important;
+        }
+    }
+}
+
+.create-playlist {
+    width: 240px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    padding: 0 28px;
+    font-weight: 700;
+    border-top: 1px solid var(--border-primary);
+    height: 54px;
+
+    i {
+        font-size: 18px;
+    }
+
+    span {
+        margin-left: 14px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: #dadada;
+    }
 }

@@ -4,7 +4,7 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-function MenuItem({ title, to, icon1, icon2, endIcon }) {
+function MenuItem({ title, to, icon1, icon2, endIcon, fontWeight }) {
     let activeStyles = {
         marginLeft: 0,
         backgroundColor: 'var(--alpha-bg)',
@@ -15,8 +15,10 @@ function MenuItem({ title, to, icon1, icon2, endIcon }) {
     return (
         <div className={cx('wrapper')}>
             <NavLink className={cx('nav')} to={to} style={({ isActive }) => (isActive ? activeStyles : undefined)}>
-                <span className={cx('icon')}>{icon1}</span>
-                <span className={cx('title')}>{title}</span>
+                <span className={icon1 ? cx('icon') : null}>{icon1}</span>
+                <span style={{ fontWeight: fontWeight }} className={cx('title')}>
+                    {title}
+                </span>
                 <span className={cx('icon')}>{icon2}</span>
                 <span className={cx('end-icon')}>{endIcon}</span>
             </NavLink>

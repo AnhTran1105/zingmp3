@@ -1,5 +1,8 @@
 import classNames from 'classnames/bind';
 import {
+    ColorLibraryIcon,
+    ColorPlaylistIcon,
+    ColorRecentIcon,
     LiveIcon,
     MenuIcon,
     MvIcon,
@@ -17,6 +20,7 @@ import MenuItem from './Menu/MenuItem';
 import styles from './Sidebar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-regular-svg-icons';
+import { faEllipsis, faPen, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -26,6 +30,7 @@ function Sidebar() {
             <div className={cx('logo-container')}>
                 <div className={cx('logo')}></div>
             </div>
+
             <Menu>
                 <MenuItem
                     title="Cá Nhân"
@@ -59,35 +64,148 @@ function Sidebar() {
                     endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
                 ></MenuItem>
             </Menu>
+
             <div className={cx('sidebar-divide')}></div>
-            <Menu>
-                <MenuItem
-                    title="Nhạc Mới"
-                    to={config.routes.newSong}
-                    icon1={<NoteIcon />}
-                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
-                >
-                    {' '}
-                </MenuItem>
-                <MenuItem
-                    title="Thể Loại"
-                    to={config.routes.genres}
-                    icon1={<MenuIcon />}
-                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
-                ></MenuItem>
-                <MenuItem
-                    title="Top 100"
-                    to={config.routes.top}
-                    icon1={<StarIcon />}
-                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
-                ></MenuItem>
-                <MenuItem
-                    title="MV"
-                    to={config.routes.mv}
-                    icon1={<MvIcon />}
-                    endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
-                ></MenuItem>
-            </Menu>
+
+            <div className={cx('vertical-scrollbar')}>
+                <div className={cx('menu')}>
+                    <Menu>
+                        <MenuItem
+                            title="Nhạc Mới"
+                            to={config.routes.newSong}
+                            icon1={<NoteIcon />}
+                            endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                        ></MenuItem>
+                        <MenuItem
+                            title="Thể Loại"
+                            to={config.routes.genres}
+                            icon1={<MenuIcon />}
+                            endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                        ></MenuItem>
+                        <MenuItem
+                            title="Top 100"
+                            to={config.routes.top}
+                            icon1={<StarIcon />}
+                            endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                        ></MenuItem>
+                        <MenuItem
+                            title="MV"
+                            to={config.routes.mv}
+                            icon1={<MvIcon />}
+                            endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                        ></MenuItem>
+                    </Menu>
+
+                    <div className={cx('sidebar-divide')}></div>
+
+                    <div className={cx('menu-library')}>
+                        <div className={cx('menu-title')}>
+                            <p>THƯ VIỆN</p>
+                            <div className={cx('icon')}>
+                                <span className={cx('title-icon')}>
+                                    <FontAwesomeIcon icon={faPen} />
+                                </span>
+                            </div>
+                        </div>
+
+                        <Menu>
+                            <MenuItem
+                                fontWeight={400}
+                                title="Bài hát"
+                                to={config.routes.newSong}
+                                icon1={<ColorLibraryIcon />}
+                                endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                            ></MenuItem>
+                            <MenuItem
+                                fontWeight={400}
+                                title="Playlist"
+                                to={config.routes.genres}
+                                icon1={<ColorPlaylistIcon />}
+                                endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                            ></MenuItem>
+                            <MenuItem
+                                fontWeight={400}
+                                title="Gần đây"
+                                to={config.routes.top}
+                                icon1={<ColorRecentIcon />}
+                                endIcon={<FontAwesomeIcon icon={faCirclePlay} />}
+                            ></MenuItem>
+                        </Menu>
+                    </div>
+                    <Menu>
+                        <MenuItem
+                            fontWeight={400}
+                            title="Playlist 1"
+                            to={config.routes.newSong}
+                            endIcon={<FontAwesomeIcon icon={faEllipsis} />}
+                        ></MenuItem>
+                        <MenuItem
+                            fontWeight={400}
+                            title="Playlist 2"
+                            to={config.routes.genres}
+                            endIcon={<FontAwesomeIcon icon={faEllipsis} />}
+                        ></MenuItem>
+                        <MenuItem
+                            fontWeight={400}
+                            title="Playlist 3"
+                            to={config.routes.top}
+                            endIcon={<FontAwesomeIcon icon={faEllipsis} />}
+                        ></MenuItem>
+                        <MenuItem
+                            fontWeight={400}
+                            title="Playlist 4"
+                            to={config.routes.top}
+                            endIcon={<FontAwesomeIcon icon={faEllipsis} />}
+                        ></MenuItem>
+                        <MenuItem
+                            fontWeight={400}
+                            title="Playlist 5"
+                            to={config.routes.top}
+                            endIcon={<FontAwesomeIcon icon={faEllipsis} />}
+                        ></MenuItem>
+                        <MenuItem
+                            fontWeight={400}
+                            title="Playlist 6"
+                            to={config.routes.top}
+                            endIcon={<FontAwesomeIcon icon={faEllipsis} />}
+                        ></MenuItem>
+                        <MenuItem
+                            fontWeight={400}
+                            title="Playlist 7"
+                            to={config.routes.top}
+                            endIcon={<FontAwesomeIcon icon={faEllipsis} />}
+                        ></MenuItem>
+                        <MenuItem
+                            fontWeight={400}
+                            title="Playlist 8"
+                            to={config.routes.top}
+                            endIcon={<FontAwesomeIcon icon={faEllipsis} />}
+                        ></MenuItem>
+                        <MenuItem
+                            fontWeight={400}
+                            title="Playlist 9"
+                            to={config.routes.top}
+                            endIcon={<FontAwesomeIcon icon={faEllipsis} />}
+                        ></MenuItem>
+                        <MenuItem
+                            fontWeight={400}
+                            title="Playlist 10"
+                            to={config.routes.top}
+                            endIcon={<FontAwesomeIcon icon={faEllipsis} />}
+                        ></MenuItem>
+                    </Menu>
+                </div>
+                <div className={cx('track-vertical')}>
+                    <div className={cx('thumb-vertical')}></div>
+                </div>
+            </div>
+
+            <div className={cx('create-playlist')}>
+                <i>
+                    <FontAwesomeIcon icon={faPlus} />
+                </i>
+                <span>Tạo Playlist mới</span>
+            </div>
         </div>
     );
 }

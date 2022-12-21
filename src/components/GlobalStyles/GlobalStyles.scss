@@ -20,6 +20,7 @@
     --linear-gradient-bg: linear-gradient(180deg, #1b2f5a, #182e5d);
     --alpha-bg: hsla(0, 0%, 100%, 0.1);
     --text-item-hover: #fff;
+    --scroll-thumb-bg: hsla(0, 0%, 100%, 0.3);
 }
 
 * {
@@ -34,6 +35,12 @@ a {
 
 html {
     font-size: 62.5%;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('/assets/fonts/Inter.woff2');
+    font-weight: 400;
 }
 
 @font-face {
