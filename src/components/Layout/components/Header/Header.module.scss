@@ -1,0 +1,107 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 240px;
+    height: 70px;
+    // background-color: var(--layout-header-bg);
+    background-color: #0f1a2f;
+    box-shadow: 0 3px 5px var(--sticky-header-box-shadow);
+    backdrop-filter: blur(50px);
+    min-width: 660px;
+    transition: right 0.4s;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    padding: 0 59px;
+    justify-content: space-between;
+}
+.center-actions {
+    display: flex;
+}
+
+.nav-btn {
+    font-size: 24px;
+    color: #dadada;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .back-btn {
+        margin-right: 20px;
+    }
+
+    .forward-btn {
+        margin-right: 20px;
+    }
+}
+
+.search {
+    position: relative;
+    width: 440px;
+
+    .search-container {
+        position: relative;
+        border-radius: 20px;
+        height: 40px;
+        background-color: var(--alpha-bg);
+        display: flex;
+        align-items: center;
+
+        span {
+            font-size: 20px;
+            position: absolute;
+            left: 10px;
+            color: var(--text-placeholder);
+        }
+
+        .input-wrapper {
+            position: absolute;
+            top: 0;
+            left: 38px;
+            right: 10px;
+            bottom: 0;
+
+            input {
+                margin: 0;
+                display: inline-block;
+                width: 95%;
+                font-size: 14px;
+                color: var(--search-text);
+                background-clip: padding-box;
+                border: 0;
+                position: relative;
+                top: 2px;
+                height: 34px;
+                padding: 5px 0;
+                line-height: 34px;
+                background-color: var(--alpha-bg);
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.right-actions {
+    display: flex;
+
+    .action-btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--alpha-bg);
+        border-radius: 999px;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.9;
+        }
+    }
+
+    .action-btn + .action-btn {
+        margin-left: 12px;
+    }
+}
