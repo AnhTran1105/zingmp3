@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Sidebar from './Sidebar';
+import NowPlayingBar from '../components/NowPlayingBar';
 
 function DefaultLayout({ children }) {
     return (
@@ -9,6 +10,7 @@ function DefaultLayout({ children }) {
                 <Sidebar />
                 <div className="content">{children}</div>
             </div>
+            <NowPlayingBar />
         </div>
     );
 }

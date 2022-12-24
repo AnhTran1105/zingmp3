@@ -41,8 +41,8 @@ function Header() {
                 <div className={cx('action-btn')}>
                     <i className={cx('icon', 'icon-setting')} />
                 </div>
-                <div className={cx('action-btn', 'profile-btn')}>
-                    <img src="" alt="" />
+                <div className={cx('profile-btn')}>
+                    <img src={require('~/assets/images/profile.jpg')} alt="avatar" />
                 </div>
             </div>
         </div>

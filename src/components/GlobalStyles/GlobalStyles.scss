@@ -25,6 +25,11 @@
     --search-text: #eee;
     --text-placeholder: #dadada;
     --setting-icon-text: #d8d8d8;
+    --border-player: hsla(0, 0%, 100%, 0.1);
+    --player-bg: #111f3b;
+    --text-primary: #fff;
+    --text-secondary: hsla(0, 0%, 100%, 0.5);
+    --player-text: #fff;
 }
 
 * {
@@ -64,6 +69,12 @@ input:focus {
     font-weight: 400;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/Roboto-Thin.ttf');
+    font-weight: 400;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     font-size: 1.6rem;
@@ -75,7 +86,7 @@ body {
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
 
-    opacity: 0.85; /* Firefox */
+    opacity: 1; /* Firefox */
 }
 
 // [data-theme='blue'] {
@@ -100,4 +111,14 @@ body {
     display: inline-block;
     font-family: 'IconFont';
     font-style: normal;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.mar-b-5 {
+    margin-bottom: 5px;
 }
