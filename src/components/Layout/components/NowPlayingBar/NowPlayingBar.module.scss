@@ -12,14 +12,14 @@
     border-top: 1px solid var(--border-player);
     background-image: var(--miniplayer-bg-img);
     justify-content: space-between;
+    align-items: center;
 }
 
 .left-level {
     transition: transform 0.5s ease 0s;
-    width: 100%;
+    width: 30%;
     display: flex;
     align-items: center;
-    flex: 1;
 }
 
 .now-song {
@@ -42,9 +42,13 @@
 
 .song-info {
     padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    line-height: normal !important;
 }
 
 .song-title {
+    line-height: 1.36;
     display: block;
     font-size: 14px;
     font-weight: 500;
@@ -52,7 +56,6 @@
 }
 
 .song-artist {
-    line-height: 1.2;
     display: block;
     margin-top: 1px;
     font-size: 12px;
@@ -110,15 +113,17 @@
 
 .center-level {
     max-width: 40vw;
-    flex: 1;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 
     .center-items {
+        width: 100%;
         display: flex;
         align-items: center;
+        justify-content: center;
 
         .center-actions {
             display: flex;
@@ -187,6 +192,7 @@
     .progress-bar {
         display: flex;
         justify-content: center;
+        align-items: center;
         height: 15px;
         width: 100%;
 
@@ -195,8 +201,8 @@
             background: linear-gradient(
                 to right,
                 var(--progressbar-active-bg) 0%,
-                var(--progressbar-active-bg) 0.479973%,
-                var(--progressbar-player-bg) 0.479973%,
+                var(--progressbar-active-bg) 0%,
+                var(--progressbar-player-bg) 0%,
                 var(--progressbar-player-bg) 100%
             );
             width: 100%;
@@ -207,7 +213,6 @@
     .total-time {
         text-align: left;
         margin-left: 10px;
-        opacity: 0.5;
         min-width: 45px;
         font-size: 12px;
         color: var(--player-text);
@@ -216,7 +221,6 @@
 }
 
 .right-level {
-    flex: 1;
     display: flex;
     width: 30%;
     align-items: center;
@@ -283,6 +287,10 @@
         }
 
         .volumn-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             .volumn-btn {
                 padding: 3px;
                 margin: 0 2px;
@@ -304,12 +312,33 @@
                     }
                 }
             }
+
+            .volumn-progress {
+                display: flex;
+                justify-content: center;
+                width: 70px;
+                height: 15px;
+                cursor: pointer;
+
+                .slider-bar {
+                    border-radius: 4px;
+                    background: linear-gradient(
+                        to right,
+                        var(--progressbar-active-bg) 0%,
+                        var(--progressbar-active-bg) 100%,
+                        var(--progressbar-player-bg) 100%,
+                        var(--progressbar-player-bg) 100%
+                    );
+                    align-self: center;
+                    width: 100%;
+                    height: 3px;
+                }
+            }
         }
     }
 }
 
 .btn {
-    padding: 3px;
     margin: 0 2px;
     color: var(--player-text);
     display: flex;
@@ -322,4 +351,8 @@
         line-height: 1;
         display: inline-block;
     }
+}
+
+.btn.hover-border {
+    padding: 3px;
 }

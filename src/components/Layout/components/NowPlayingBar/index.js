@@ -50,23 +50,23 @@ function NowPlayingBar() {
                     <div className={cx('progress-bar')}>
                         <div className={cx('progress')}></div>
                     </div>
-                    <span className={cx('total-time')}>04:24</span>
+                    <span className={cx('total-time')}>04:26</span>
                 </div>
             </div>
             <div className={cx('right-level')}>
                 <div className={cx('right-items')}>
                     <div className={cx('item')}>
-                        <button className={cx('mv-btn', 'btn', 'hover-border')}>
+                        <button className={cx('mv-btn', 'btn', 'hover-border', 'pd-l-r-3')}>
                             <i className={cx('icon', 'mv-icon')}></i>
                         </button>
                     </div>
                     <div className={cx('item')}>
-                        <button className={cx('karaoke-btn', 'btn', 'hover-border')}>
+                        <button className={cx('karaoke-btn', 'btn', 'hover-border', 'pd-l-r-3')}>
                             <i className={cx('icon', 'karaoke-icon')}></i>
                         </button>
                     </div>
                     <div className={cx('item')}>
-                        <button className={cx('restore-btn', 'btn', 'hover-border')}>
+                        <button className={cx('restore-btn', 'btn', 'hover-border', 'pd-l-r-3')}>
                             <i className={cx('icon', 'restore-icon')}></i>
                         </button>
                     </div>
@@ -74,13 +74,15 @@ function NowPlayingBar() {
                         <button className={cx('volumn-btn', 'btn', 'hover-border')}>
                             <i className={cx('icon', 'volumn-icon')}></i>
                         </button>
-                        <div className={cx('volumn-progress')}></div>
+                        <div className={cx('volumn-progress')}>
+                            <div className={cx('slider-bar')}></div>
+                        </div>
                     </div>
                     <div className={cx('item')}>
                         <div className={cx('line-divide')}></div>
                     </div>
                     <div className={cx('item')}>
-                        <button className={cx('playlist-btn', 'btn', 'expand-btn')}>
+                        <button className={cx('playlist-btn', 'btn', 'expand-btn', 'mar-0')}>
                             <i className={cx('icon', 'playlist-icon')}></i>
                         </button>
                     </div>

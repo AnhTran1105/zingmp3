@@ -28,8 +28,10 @@
     --border-player: hsla(0, 0%, 100%, 0.1);
     --player-bg: #111f3b;
     --text-primary: #fff;
-    --text-secondary: hsla(0, 0%, 100%, 0.5);
+    --text-secondary: rgba(255, 255, 255, 0.5);
     --player-text: #fff;
+    --progressbar-player-bg: hsla(0, 0%, 100%, 0.3);
+    --progressbar-active-bg: #fff;
 }
 
 * {
@@ -121,4 +123,12 @@ button {
 
 .mar-b-5 {
     margin-bottom: 5px;
+}
+
+.mar-0 {
+    margin: 0 !important;
+}
+
+.pd-l-r-3 {
+    padding: 0 3px !important;
 }
