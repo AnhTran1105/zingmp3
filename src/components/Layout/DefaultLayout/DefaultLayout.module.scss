@@ -1,0 +1,11 @@
+.container {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    width: calc(100% - 240px);
+    height: calc(100vh - 70px);
+    display: -moz-flex;
+    display: flex;
+    min-width: 768px;
+    // background-color: var(--layout-bg);
+}
