@@ -45,6 +45,11 @@ html {
     font-size: 62.5%;
 }
 
+#root {
+    position: relative;
+    overflow: hidden;
+}
+
 a {
     text-decoration: none;
 }
@@ -133,4 +138,10 @@ button {
 
 .pd-l-r-3 {
     padding: 0 3px !important;
+}
+
+img,
+video {
+    height: auto;
+    width: 100%;
 }

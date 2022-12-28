@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 function DefaultLayout({ children }) {
     return (
-        <div>
+        <div className={cx('zm-layout')}>
             <Header />
             <Sidebar />
             <Discovery />

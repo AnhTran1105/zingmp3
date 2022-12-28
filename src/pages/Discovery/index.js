@@ -7,10 +7,11 @@ const cx = classNames.bind(styles);
 
 function Discovery() {
     return (
-        <div>
-            <SlideShow />
-            <div className={cx('spacer')}></div>
-            <PlaylistSection />
+        <div className={cx('main-page')}>
+            <div className={cx('content')}>
+                <SlideShow />
+                <PlaylistSection />
+            </div>
         </div>
     );
 }
