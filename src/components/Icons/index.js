@@ -369,15 +369,15 @@ export const ThemeIcon = ({ width = '2rem', height = '2rem', className }) => (
         </defs>
         <g fill="none" fillRule="evenodd" transform="translate(2 3)">
             <mask id="tinejqaasb" fill="#fff">
-                <use xlink href="#qtpqrj1oda"></use>
+                <use href="#qtpqrj1oda"></use>
             </mask>
-            <use fill="#FFF" fillOpacity="0" xlink href="#qtpqrj1oda"></use>
+            <use fill="#FFF" fillOpacity="0" href="#qtpqrj1oda"></use>
             <g mask="url(#tinejqaasb)">
                 <g transform="translate(-2 -3)">
                     <mask id="uf3ckvfvpf" fill="#fff">
-                        <use xlink href="#jggzvnjgfc"></use>
+                        <use href="#jggzvnjgfc"></use>
                     </mask>
-                    <use fill="#D8D8D8" xlink href="#jggzvnjgfc"></use>
+                    <use fill="#D8D8D8" href="#jggzvnjgfc"></use>
                     <circle
                         cx="8.9"
                         cy="6.8"
@@ -412,7 +412,7 @@ export const ThemeIcon = ({ width = '2rem', height = '2rem', className }) => (
                     ></circle>
                 </g>
             </g>
-            <use fill="#FFF" fillOpacity="0.05" xlink href="#2eiwxjmc7m"></use>
+            <use fill="#FFF" fillOpacity="0.05" href="#2eiwxjmc7m"></use>
         </g>
     </svg>
 );

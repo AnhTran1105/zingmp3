@@ -1,14 +1,23 @@
 import classNames from 'classnames/bind';
 import styles from './PlaylistSection.module.scss';
+import ReactDOM from 'react-dom';
 
 const cx = classNames.bind(styles);
 
-function PlaylistSection() {
-    return (
+function PlaylistSection({
+    numOfElements = 3,
+    sectionTitle,
+    cardImage = [],
+    cardTitle = [],
+    artists = [[]],
+    playlistDes = [],
+}) {
+    function renderCarouselContainer() {
+        return;
         <div className={cx('playlist-section')}>
             <div className={cx('container')}>
                 <h3 className={cx('title')}>
-                    Nhạc Hay Ho Của 2022 ⭐
+                    {sectionTitle}
                     <a className={cx('more-btn')} href="/">
                         TẤT CẢ
                         <i className={cx('more-icon', 'icon')}></i>
@@ -16,20 +25,36 @@ function PlaylistSection() {
                 </h3>
                 <div className={cx('content-wrapper')}>
                     <div className={cx('carousel')}>
-                        <div className={cx('carousel-container')}>
+                        <div id={cx('root')} className={cx('carousel-container')}></div>
+                    </div>
+                </div>
+            </div>
+        </div>;
+    }
+
+    return (
+        <div className={cx('playlist-section')}>
+            <div className={cx('container')}>
+                <h3 className={cx('title')}>
+                    {sectionTitle}
+                    <a className={cx('more-btn')} href="/">
+                        TẤT CẢ
+                        <i className={cx('more-icon', 'icon')}></i>
+                    </a>
+                </h3>
+                <div className={cx('content-wrapper')}>
+                    <div className={cx('carousel')}>
+                        <div id={cx('root')} className={cx('carousel-container')}>
                             <div className={cx('carousel-item')}>
                                 <div className={cx('zm-card')}>
                                     <div className={cx('card-content')}>
                                         <a
-                                            title="10 Nghệ Sĩ Xuất Sắc 2022"
+                                            title={cardTitle[0]}
                                             href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
                                         >
                                             <div className={cx('card-image')}>
                                                 <figure className={cx('image')}>
-                                                    <img
-                                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/a/d/0/bad05d20e4d804ec53592da82b73f8d6.jpg"
-                                                        alt=""
-                                                    />
+                                                    <img src={cardImage[0]} alt="" />
                                                 </figure>
                                             </div>
                                         </a>
@@ -37,26 +62,32 @@ function PlaylistSection() {
                                     <div className={cx('card-info')}>
                                         <h4 className={cx('title')}>
                                             <a
-                                                title="10 Nghệ Sĩ Xuất Sắc 2022"
+                                                title={cardTitle[0]}
                                                 href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
                                             >
-                                                <span>10 Nghệ Sĩ Xuất Sắc 2022</span>
+                                                <span>{cardTitle[0]}</span>
                                             </a>
                                         </h4>
-                                        <h3 className={cx('subtitle')}>
-                                            <a className={cx('is-ghost')} href="/Hoang-Thuy-Linh">
-                                                Hoàng Thùy Linh
-                                            </a>
-                                            ,{' '}
-                                            <a className={cx('is-ghost')} href="/AMEE">
-                                                AMEE
-                                            </a>
-                                            ,{' '}
-                                            <a className={cx('is-ghost')} href="/nghe-si/MONO-Nguyen-Viet-Hoang">
-                                                MONO
-                                            </a>
-                                            ...
-                                        </h3>
+                                        {artists.length > 1 ? (
+                                            <h3 className={cx('subtitle')}>
+                                                <a className={cx('is-ghost')} href="/Hoang-Thuy-Linh">
+                                                    {artists[0][0]}
+                                                </a>
+                                                ,{' '}
+                                                <a className={cx('is-ghost')} href="/AMEE">
+                                                    {artists[0][1]}
+                                                </a>
+                                                ,{' '}
+                                                <a className={cx('is-ghost')} href="/nghe-si/MONO-Nguyen-Viet-Hoang">
+                                                    {artists[0][2]}
+                                                </a>
+                                                ...
+                                            </h3>
+                                        ) : (
+                                            <h3 className={cx('subtitle')}>
+                                                <span>{playlistDes[0]}</span>
+                                            </h3>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -64,15 +95,12 @@ function PlaylistSection() {
                                 <div className={cx('zm-card')}>
                                     <div className={cx('card-content')}>
                                         <a
-                                            title="10 Nghệ Sĩ Xuất Sắc 2022"
+                                            title={cardTitle[1]}
                                             href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
                                         >
                                             <div className={cx('card-image')}>
                                                 <figure className={cx('image')}>
-                                                    <img
-                                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/f/e/3/bfe38a668289c6fac1b6659457a3ad49.jpg"
-                                                        alt=""
-                                                    />
+                                                    <img src={cardImage[1]} alt="" />
                                                 </figure>
                                             </div>
                                         </a>
@@ -80,26 +108,32 @@ function PlaylistSection() {
                                     <div className={cx('card-info')}>
                                         <h4 className={cx('title')}>
                                             <a
-                                                title="10 Nghệ Sĩ Xuất Sắc 2022"
+                                                title={cardTitle[1]}
                                                 href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
                                             >
-                                                <span>10 Nghệ Sĩ Xuất Sắc 2022</span>
+                                                <span>{cardTitle[1]}</span>
                                             </a>
                                         </h4>
-                                        <h3 className={cx('subtitle')}>
-                                            <a className={cx('is-ghost')} href="/Karik">
-                                                Karik<i class="icon ic-star"></i>
-                                            </a>
-                                            ,{' '}
-                                            <a className={cx('is-ghost')} href="/Duc-Phuc">
-                                                Đức Phúc<i class="icon ic-star"></i>
-                                            </a>
-                                            ,{' '}
-                                            <a className={cx('is-ghost')} href="/Van-Mai-Huong">
-                                                Văn Mai Hương
-                                            </a>
-                                            ...
-                                        </h3>
+                                        {artists.length > 1 ? (
+                                            <h3 className={cx('subtitle')}>
+                                                <a className={cx('is-ghost')} href="/Hoang-Thuy-Linh">
+                                                    {artists[1][0]}
+                                                </a>
+                                                ,{' '}
+                                                <a className={cx('is-ghost')} href="/AMEE">
+                                                    {artists[1][1]}
+                                                </a>
+                                                ,{' '}
+                                                <a className={cx('is-ghost')} href="/nghe-si/MONO-Nguyen-Viet-Hoang">
+                                                    {artists[1][2]}
+                                                </a>
+                                                ...
+                                            </h3>
+                                        ) : (
+                                            <h3 className={cx('subtitle')}>
+                                                <span>{playlistDes[1]}</span>
+                                            </h3>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -107,15 +141,12 @@ function PlaylistSection() {
                                 <div className={cx('zm-card')}>
                                     <div className={cx('card-content')}>
                                         <a
-                                            title="Nghệ Sĩ Mới Nổi Bật 2022"
+                                            title={cardTitle[2]}
                                             href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
                                         >
                                             <div className={cx('card-image')}>
                                                 <figure className={cx('image')}>
-                                                    <img
-                                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/f/8/4/ff849b97aec21619cb10f522a480f14c.jpg"
-                                                        alt=""
-                                                    />
+                                                    <img src={cardImage[2]} alt="" />
                                                 </figure>
                                             </div>
                                         </a>
@@ -123,26 +154,32 @@ function PlaylistSection() {
                                     <div className={cx('card-info')}>
                                         <h4 className={cx('title')}>
                                             <a
-                                                title="Nghệ Sĩ Mới Nổi Bật 2022"
+                                                title={cardTitle[2]}
                                                 href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
                                             >
-                                                <span>Nghệ Sĩ Mới Nổi Bật 2022</span>
+                                                <span>{cardTitle[2]}</span>
                                             </a>
                                         </h4>
-                                        <h3 className={cx('subtitle')}>
-                                            <a className={cx('is-ghost')} href="/nghe-si/MONO-Nguyen-Viet-Hoang">
-                                                MONO
-                                            </a>
-                                            ,{' '}
-                                            <a className={cx('is-ghost')} href="/GREY-D-Doan-The-Lan">
-                                                GREY D
-                                            </a>
-                                            ,{' '}
-                                            <a className={cx('is-ghost')} href="/nghe-si/Thu-Cam">
-                                                Cầm
-                                            </a>
-                                            ...
-                                        </h3>
+                                        {artists.length > 1 ? (
+                                            <h3 className={cx('subtitle')}>
+                                                <a className={cx('is-ghost')} href="/Hoang-Thuy-Linh">
+                                                    {artists[2][0]}
+                                                </a>
+                                                ,{' '}
+                                                <a className={cx('is-ghost')} href="/AMEE">
+                                                    {artists[2][1]}
+                                                </a>
+                                                ,{' '}
+                                                <a className={cx('is-ghost')} href="/nghe-si/MONO-Nguyen-Viet-Hoang">
+                                                    {artists[2][2]}
+                                                </a>
+                                                ...
+                                            </h3>
+                                        ) : (
+                                            <h3 className={cx('subtitle')}>
+                                                <span>{playlistDes[2]}</span>
+                                            </h3>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -150,15 +187,12 @@ function PlaylistSection() {
                                 <div className={cx('zm-card')}>
                                     <div className={cx('card-content')}>
                                         <a
-                                            title="10 Nghệ Sĩ Xuất Sắc 2022"
+                                            title={cardTitle[3]}
                                             href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
                                         >
                                             <div className={cx('card-image')}>
                                                 <figure className={cx('image')}>
-                                                    <img
-                                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/0/2/8/9/0289857b5e5da497cef2cc590c713fc3.jpg"
-                                                        alt=""
-                                                    />
+                                                    <img src={cardImage[3]} alt="" />
                                                 </figure>
                                             </div>
                                         </a>
@@ -166,26 +200,32 @@ function PlaylistSection() {
                                     <div className={cx('card-info')}>
                                         <h4 className={cx('title')}>
                                             <a
-                                                title="10 Nghệ Sĩ Xuất Sắc 2022"
+                                                title={cardTitle[3]}
                                                 href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
                                             >
-                                                <span>10 Nghệ Sĩ Xuất Sắc 2022</span>
+                                                <span>{cardTitle[3]}</span>
                                             </a>
                                         </h4>
-                                        <h3 className={cx('subtitle')}>
-                                            <a className={cx('is-ghost')} href="/Miu-Le">
-                                                Miu Lê
-                                            </a>
-                                            ,{' '}
-                                            <a className={cx('is-spotlight', 'is-ghost')} href="/Karik">
-                                                Karik<i class="icon ic-star"></i>
-                                            </a>
-                                            ,{' '}
-                                            <a className={cx('is-ghost')} href="/Hoang-Thuy-Linh">
-                                                Hoàng Thùy Linh
-                                            </a>
-                                            ...
-                                        </h3>
+                                        {artists.length > 1 ? (
+                                            <h3 className={cx('subtitle')}>
+                                                <a className={cx('is-ghost')} href="/Hoang-Thuy-Linh">
+                                                    {artists[3][0]}
+                                                </a>
+                                                ,{' '}
+                                                <a className={cx('is-ghost')} href="/AMEE">
+                                                    {artists[3][1]}
+                                                </a>
+                                                ,{' '}
+                                                <a className={cx('is-ghost')} href="/nghe-si/MONO-Nguyen-Viet-Hoang">
+                                                    {artists[3][2]}
+                                                </a>
+                                                ...
+                                            </h3>
+                                        ) : (
+                                            <h3 className={cx('subtitle')}>
+                                                <span>{playlistDes[3]}</span>
+                                            </h3>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -193,15 +233,12 @@ function PlaylistSection() {
                                 <div className={cx('zm-card')}>
                                     <div className={cx('card-content')}>
                                         <a
-                                            title="10 Nghệ Sĩ Xuất Sắc 2022"
+                                            title={cardTitle[4]}
                                             href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
                                         >
                                             <div className={cx('card-image')}>
                                                 <figure className={cx('image')}>
-                                                    <img
-                                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/a/d/0/bad05d20e4d804ec53592da82b73f8d6.jpg"
-                                                        alt=""
-                                                    />
+                                                    <img src={cardImage[4]} alt="" />
                                                 </figure>
                                             </div>
                                         </a>
@@ -209,37 +246,37 @@ function PlaylistSection() {
                                     <div className={cx('card-info')}>
                                         <h4 className={cx('title')}>
                                             <a
-                                                title="10 Nghệ Sĩ Xuất Sắc 2022"
+                                                title={cardTitle[4]}
                                                 href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
                                             >
-                                                <span>10 Nghệ Sĩ Xuất Sắc 2022</span>
+                                                <span>{cardTitle[4]}</span>
                                             </a>
                                         </h4>
-                                        <h3 className={cx('subtitle')}>
-                                            <a className={cx('is-ghost')} href="/Hoang-Thuy-Linh">
-                                                Hoàng Thùy Linh
-                                            </a>
-                                            ,{' '}
-                                            <a className={cx('is-ghost')} href="/AMEE">
-                                                AMEE
-                                            </a>
-                                            ,{' '}
-                                            <a className={cx('is-ghost')} href="/nghe-si/MONO-Nguyen-Viet-Hoang">
-                                                MONO
-                                            </a>
-                                            ...
-                                        </h3>
+                                        {artists.length > 1 ? (
+                                            <h3 className={cx('subtitle')}>
+                                                <a className={cx('is-ghost')} href="/Hoang-Thuy-Linh">
+                                                    {artists[4][0]}
+                                                </a>
+                                                ,{' '}
+                                                <a className={cx('is-ghost')} href="/AMEE">
+                                                    {artists[4][1]}
+                                                </a>
+                                                ,{' '}
+                                                <a className={cx('is-ghost')} href="/nghe-si/MONO-Nguyen-Viet-Hoang">
+                                                    {artists[4][2]}
+                                                </a>
+                                                ...
+                                            </h3>
+                                        ) : (
+                                            <h3 className={cx('subtitle')}>
+                                                <span>{playlistDes[4]}</span>
+                                            </h3>
+                                        )}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button className={cx('prev-btn')}>
-                        <i className={cx('prev-icon', 'icon')}></i>
-                    </button>
-                    <button className={cx('next-btn')}>
-                        <i className={cx('next-icon', 'icon')}></i>
-                    </button>
                 </div>
             </div>
         </div>
