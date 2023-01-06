@@ -83,13 +83,19 @@ input:focus {
     font-weight: 400;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/Roboto-Light.ttf');
+    font-weight: 600;
+}
+
 body {
     overscroll-behavior: none;
     font-family: 'Inter', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
-    // letter-spacing: 0.03px;
+    letter-spacing: 0.1px;
 }
 
 ::placeholder {

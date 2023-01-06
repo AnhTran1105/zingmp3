@@ -1,0 +1,77 @@
+.new-release-section {
+    margin-top: 48px;
+
+    .title {
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: #fff;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+    .genres {
+        margin-bottom: 16px;
+
+        .genre-btn {
+            font-family: 'Roboto';
+            padding: 4px 24px;
+            border: 1px solid var(--border-primary);
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-right: 15px;
+            color: var(--text-primary);
+        }
+    }
+
+    .columns {
+        display: flex;
+
+        .column {
+            flex: 1;
+
+            .list-item {
+                display: flex;
+                .media {
+                    .media-left {
+                        .song-thumb {
+                            margin-right: 10px;
+                            cursor: pointer;
+
+                            .image {
+                                width: 60px;
+                                height: 60px;
+                                border-radius: 4px;
+
+                                img {
+                                    width: 60px;
+                                    height: 60px;
+                                    border-radius: 4px;
+                                }
+                            }
+                        }
+
+                        .card-info {
+                            .title {
+                            }
+
+                            .sub-title {
+                            }
+
+                            .time-release {
+                            }
+                        }
+                    }
+
+                    .media-right {
+                        .more-btn {
+                            .more-icon {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -19,12 +19,17 @@
     padding: 8px 25px;
     align-items: center;
     margin-left: 3px;
+    color: #dadada;
 
     &:hover {
         .title,
         .icon {
             color: #fff;
         }
+    }
+
+    .icon1 {
+        color: #dadada;
     }
 }
 
@@ -38,7 +43,7 @@
 }
 
 .icon {
-    color: #dadada;
+    color: inherit;
     margin-right: 10px;
     display: flex;
     align-items: center;
@@ -54,7 +59,7 @@
 }
 
 .title {
-    color: #dadada;
+    color: inherit;
     font-size: 1.3rem;
     font-weight: 700;
     margin-right: 8px;

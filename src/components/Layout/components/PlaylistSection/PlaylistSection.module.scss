@@ -26,15 +26,24 @@
     display: flex;
     align-items: center;
     color: var(--text-secondary);
-}
 
-.more-icon {
-    font-size: 16px;
-    top: 0;
-    margin-left: 6px;
+    &:hover {
+        color: var(--link-text-hover);
 
-    &::before {
-        content: '\41';
+        .more-icon {
+            color: var(--link-text-hover);
+        }
+    }
+
+    .more-icon {
+        font-size: 16px;
+        top: 0;
+        margin-left: 6px;
+        color: var(--text-secondary);
+
+        &::before {
+            content: '\41';
+        }
     }
 }
 
@@ -60,40 +69,27 @@
     padding: 0 14px;
     flex: 1;
 
-    .zm-card {
-        line-height: normal;
-    }
-
-    .card-image {
-        display: block;
-        position: relative;
-        overflow: hidden;
-        border-radius: 4px;
-
-        .image {
-            line-height: 0;
-            height: 0;
-            padding-bottom: 100%;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-    }
-
     .card-info {
         margin-top: 12px;
 
         .title {
             margin-bottom: 4px;
+
             a {
                 line-height: 1.36;
                 color: var(--text-primary);
                 text-transform: none;
                 font-size: 14px;
                 font-weight: 700;
-                white-space: nowrap;
+                // avoid size of flex item error
+                // white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: block;
+
+                &:hover {
+                    color: var(--link-text-hover);
+                }
             }
         }
 
@@ -101,14 +97,82 @@
             color: var(--text-secondary);
             font-size: 14px;
             line-height: 1.33;
-            font-weight: 400;
+            font-family: 'Roboto';
+            font-weight: 600;
 
             a {
                 color: var(--text-secondary);
+
+                &:hover {
+                    color: var(--link-text-hover);
+                    text-decoration: underline;
+                }
             }
 
             span {
                 display: block;
+            }
+        }
+    }
+}
+
+.zm-card {
+    line-height: normal;
+}
+
+.card-image {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+
+    .image {
+        line-height: 0;
+        height: 0;
+        padding-bottom: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+}
+
+.media-header {
+    display: flex;
+    padding: 0 0 20px;
+    align-items: center;
+
+    .media-left {
+        margin-right: 10px;
+        .image > img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .media-content {
+        line-height: 1.54;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .subtitle {
+            font-family: 'Roboto';
+            font-size: 15px;
+            margin-top: 3px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .title {
+            margin: 0;
+
+            > a {
+                color: var(--text-primary);
+                font-size: 18px;
+
+                &:hover {
+                    color: var(--link-text-hover);
+                }
             }
         }
     }
