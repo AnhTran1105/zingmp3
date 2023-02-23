@@ -21,21 +21,50 @@
             font-size: 12px;
             text-transform: uppercase;
             margin-right: 15px;
+            letter-spacing: 0.5px;
             color: var(--text-primary);
+
+            &:hover {
+                filter: brightness(0.9);
+            }
+        }
+
+        .genre-btn.active {
+            background-color: var(--purple-primary);
+            border-color: var(--purple-primary);
         }
     }
 
     .columns {
         display: flex;
+        margin: 0 -14px;
 
         .column {
             flex: 1;
+            padding: 0 14px;
 
             .list-item {
-                display: flex;
+                border-radius: 5px;
+                &:hover {
+                    background-color: var(--alpha-bg);
+
+                    .opacity {
+                        display: block !important;
+                    }
+
+                    .play-btn {
+                        display: flex !important;
+                    }
+                }
                 .media {
+                    padding: 10px;
+                    display: flex;
+
                     .media-left {
+                        display: flex;
+                        margin-right: 10px;
                         .song-thumb {
+                            position: relative;
                             margin-right: 10px;
                             cursor: pointer;
 
@@ -50,23 +79,114 @@
                                     border-radius: 4px;
                                 }
                             }
+
+                            .opacity {
+                                display: none;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                right: 0;
+                                left: 0;
+                                background-color: var(--dark-alpha-50);
+                            }
+
+                            .play-btn {
+                                display: flex;
+                                justify-content: center;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                display: none;
+
+                                .play-icon {
+                                    align-self: center;
+                                    color: #fff;
+
+                                    &::before {
+                                        content: '\5e';
+                                    }
+
+                                    &:hover {
+                                        filter: brightness(0.9);
+                                    }
+                                }
+                            }
                         }
 
                         .card-info {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+
                             .title {
+                                font-size: 14px;
+                                margin: 0;
+                                font-weight: 400;
                             }
 
-                            .sub-title {
+                            .subtitle {
+                                font-family: 'Roboto';
+                                font-weight: 700;
+                                margin-top: 3px;
+                                font-size: 12px;
+                                line-height: 1.33;
+
+                                a {
+                                    color: var(--text-secondary);
+
+                                    &:hover {
+                                        text-decoration: underline;
+                                        color: var(--link-text-hover);
+                                    }
+                                }
                             }
 
                             .time-release {
+                                font-family: 'Roboto';
+                                font-weight: 700;
+                                line-height: 18px;
+                                margin-top: 3px;
+                                display: flex;
+                                align-items: center;
+
+                                span {
+                                    font-size: 12px;
+                                    color: var(--text-secondary);
+                                    font-weight: 700;
+                                }
                             }
                         }
                     }
 
                     .media-right {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        margin-left: 10px;
+                        flex-shrink: 0;
+                        flex-grow: 1;
+
                         .more-btn {
+                            display: flex;
+                            justify-content: flex-end;
+                            padding: 6px;
+                            margin: 0 4px;
+                            align-items: center;
+
+                            &:hover {
+                                border-radius: 50%;
+                                background-color: var(--alpha-bg);
+                                cursor: pointer;
+                            }
                             .more-icon {
+                                padding: 5px;
+                                font-size: 16px;
+                                color: var(--text-primary);
+                                &::before {
+                                    content: '\4a';
+                                }
                             }
                         }
                     }
