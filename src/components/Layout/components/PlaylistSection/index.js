@@ -17,6 +17,18 @@ function PlaylistSection({ props, sectionTitle, moreBtn = false, forFan }) {
                             <figure className={cx('image')}>
                                 <img src={item.img} alt="" />
                             </figure>
+                            <div className={cx('opacity')}></div>
+                            <div className={cx('actions')}>
+                                <button className={cx('like-btn')}>
+                                    <i className={cx('icon', 'like-icon')}></i>
+                                </button>
+                                <button className={cx('play-btn')}>
+                                    <i className={cx('icon', 'play-icon', 'play-svg')}></i>
+                                </button>
+                                <button className={cx('more-btn')}>
+                                    <i className={cx('icon', 'more-icon')}></i>
+                                </button>
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -84,9 +96,9 @@ function PlaylistSection({ props, sectionTitle, moreBtn = false, forFan }) {
                     <h3 className={cx('title')}>
                         {sectionTitle}
                         {moreBtn ? (
-                            <a className={cx('more-btn')} href="/">
+                            <a className={cx('next-btn')} href="/">
                                 TẤT CẢ
-                                <i className={cx('more-icon', 'icon')}></i>
+                                <i className={cx('next-icon', 'icon')}></i>
                             </a>
                         ) : (
                             ''

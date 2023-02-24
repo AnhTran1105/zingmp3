@@ -7,6 +7,35 @@
         color: #fff;
         font-weight: 700;
         text-transform: capitalize;
+
+        .next-btn {
+            float: right;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+
+            &:hover {
+                color: var(--link-text-hover);
+
+                .next-icon {
+                    color: var(--link-text-hover);
+                }
+            }
+
+            .next-icon {
+                font-size: 16px;
+                top: 0;
+                margin-left: 6px;
+                color: var(--text-secondary);
+
+                &::before {
+                    content: '\41';
+                }
+            }
+        }
     }
 
     .genres {
@@ -55,6 +84,10 @@
                     .play-btn {
                         display: flex !important;
                     }
+
+                    .more-btn {
+                        display: flex !important;
+                    }
                 }
                 .media {
                     padding: 10px;
@@ -88,6 +121,9 @@
                                 right: 0;
                                 left: 0;
                                 background-color: var(--dark-alpha-50);
+                                border-radius: 4px;
+                                width: 60px;
+                                height: 60px;
                             }
 
                             .play-btn {
@@ -132,6 +168,7 @@
                                 margin-top: 3px;
                                 font-size: 12px;
                                 line-height: 1.33;
+                                color: var(--text-secondary);
 
                                 a {
                                     color: var(--text-secondary);
@@ -174,6 +211,7 @@
                             padding: 6px;
                             margin: 0 4px;
                             align-items: center;
+                            display: none;
 
                             &:hover {
                                 border-radius: 50%;
