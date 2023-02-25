@@ -92,7 +92,7 @@ function PlaylistSection({ props, sectionTitle, moreBtn = false, forFan }) {
                             </h3>
                         </div>
                     </div>
-                ) : (
+                ) : sectionTitle ? (
                     <h3 className={cx('title')}>
                         {sectionTitle}
                         {moreBtn ? (
@@ -104,6 +104,8 @@ function PlaylistSection({ props, sectionTitle, moreBtn = false, forFan }) {
                             ''
                         )}
                     </h3>
+                ) : (
+                    ''
                 )}
                 <div className={cx('content-wrapper')}>
                     <div className={cx('carousel')}>

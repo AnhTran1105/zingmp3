@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import NewReleaseSection from '~/components/Layout/components/NewReleaseSection';
+import NewSongSection from '~/components/Layout/components/NewSongSection';
 // import LiveStreamSection from '~/components/Layout/components/LiveStreamSection';
 import PlaylistSection from '~/components/Layout/components/PlaylistSection';
 import SlideShow from '~/components/Layout/components/SlideShow';
@@ -212,6 +213,68 @@ function Discovery() {
                             songName: '11:11',
                             artists: ['MiiNa', 'RIN9', 'DREAMeR'],
                             timeRelease: '2 ngày trước',
+                        },
+                    ]}
+                />
+                <NewSongSection
+                    props={[
+                        {
+                            id: 0,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/7/a/6/f/7a6f65300b3d82b17a023a05e42ea6c1.jpg',
+                            songName: 'Bồng Bềnh Bồng Bềnh',
+                            artists: ['Nam Em'],
+                            timeRelease: '22.02.2023',
+                            order: '1',
+                        },
+                        {
+                            id: 1,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/4/0/c/9/40c979fecdbde04e31d072292f2ca5b2.jpg',
+                            songName: '11:11',
+                            artists: ['MiiNa', 'RIN9', 'DREAMeR'],
+                            timeRelease: '22.02.2023',
+                            order: '2',
+                        },
+                        {
+                            id: 2,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/a/9/c/fa9c4dc780fcdcf17e35374b9e4be2fc.jpg',
+                            songName: 'Người Rất Tốt Không Gặp Sẽ Tốt Hơn',
+                            artists: ['Hiền Hồ'],
+                            timeRelease: '23.02.2023',
+                            order: '3',
+                        },
+                    ]}
+                />
+                <PlaylistSection
+                    props={[
+                        {
+                            id: 0,
+                            title: 'Bí Mật Nhỏ (Single)',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/a/d/9/e/ad9e3e8052719bf8bd36ff78ce7bb84c.jpg',
+                            artists: ['B Ray', 'Helia', 'Hoàng Tôn'],
+                        },
+                        {
+                            id: 1,
+                            title: 'Sau Này Nếu Có Thương Em',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/1/9/a/f19ad7841238e403df36cc7a9c536837.jpg',
+                            artists: ['Hương Ly', 'LY.M'],
+                        },
+                        {
+                            id: 2,
+                            title: 'Người Rất Tốt Không Gặp Sẽ Tốt Hơn',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/a/9/c/fa9c4dc780fcdcf17e35374b9e4be2fc.jpg',
+                            artists: ['Hiền Hồ'],
+                        },
+                        {
+                            id: 3,
+                            title: 'Cây Đa Quán Dốc',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/d/0/9/bd09cdcd85cec5eba537ac2862c192c3.jpg',
+                            artists: ['LEO'],
+                        },
+                        {
+                            id: 4,
+                            title: 'Bật Tình Yêu Lên',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/2/d/5/c/2d5cc8bc9f930ce292c464e929ea31fb.jpg',
+                            artists: ['Tăng Duy Tân', 'Hòa Minzy'],
                         },
                     ]}
                 />

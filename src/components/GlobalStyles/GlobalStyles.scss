@@ -35,6 +35,9 @@
     --white: #fff;
     --purple-primary: #158370;
     --dark-alpha-50: rgba(0, 0, 0, 0.5);
+    --main-text-stroke: #fff;
+    --new-release-box-shadow: none;
+    --box-item-bg: hsla(0, 0%, 100%, 0.1);
 }
 
 * {
@@ -89,6 +92,12 @@ input:focus {
     font-family: 'Roboto';
     src: url('/assets/fonts/Roboto-Light.ttf');
     font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/Roboto-Black.ttf');
+    font-weight: 900;
 }
 
 body {
