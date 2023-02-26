@@ -1,7 +1,9 @@
 import classNames from 'classnames/bind';
+import EventSection from '~/components/Layout/components/EventSection';
 import NewReleaseSection from '~/components/Layout/components/NewReleaseSection';
 import NewSongSection from '~/components/Layout/components/NewSongSection';
-// import LiveStreamSection from '~/components/Layout/components/LiveStreamSection';
+import PartnerSection from '~/components/Layout/components/PartnerSection';
+import LiveStreamSection from '~/components/Layout/components/LiveStreamSection';
 import PlaylistSection from '~/components/Layout/components/PlaylistSection';
 import SlideShow from '~/components/Layout/components/SlideShow';
 import styles from './Discovery.module.scss';
@@ -127,6 +129,7 @@ function Discovery() {
                         },
                     ]}
                 />
+                <LiveStreamSection />
                 <NewReleaseSection
                     props={[
                         {
@@ -275,6 +278,63 @@ function Discovery() {
                             title: 'Bật Tình Yêu Lên',
                             img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/2/d/5/c/2d5cc8bc9f930ce292c464e929ea31fb.jpg',
                             artists: ['Tăng Duy Tân', 'Hòa Minzy'],
+                        },
+                    ]}
+                />
+                <EventSection
+                    props={[
+                        {
+                            id: 0,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w600_r12x7_webp/event/6/2/e/d/62edf7eebd38da2e99397514179eb06a.jpg',
+                        },
+                        {
+                            id: 1,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w600_r12x7_webp/event/6/2/e/d/62edf7eebd38da2e99397514179eb06a.jpg',
+                        },
+                        {
+                            id: 2,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w600_r12x7_webp/event/6/2/e/d/62edf7eebd38da2e99397514179eb06a.jpg',
+                        },
+                    ]}
+                />
+                <PartnerSection
+                    props={[
+                        { id: 0, img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/sony.png' },
+                        { id: 1, img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/taihe.png' },
+                        {
+                            id: 2,
+                            img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/SM-Entertainment.png',
+                        },
+                        { id: 3, img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/yg.png' },
+                        { id: 4, img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/hikoon.png' },
+                        {
+                            id: 5,
+                            img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/universal-1.png',
+                        },
+                        {
+                            id: 6,
+                            img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/route-note.png',
+                        },
+                        { id: 7, img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/kakao.png' },
+                        { id: 8, img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/beggers.png' },
+                        { id: 9, img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/jsj.png' },
+                        {
+                            id: 10,
+                            img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/ingrooves.png',
+                        },
+                        {
+                            id: 11,
+                            img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/monstercat.png',
+                        },
+                        { id: 12, img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/genie.png' },
+                        {
+                            id: 13,
+                            img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/stone-music.png',
+                        },
+                        { id: 14, img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/FUGA.png' },
+                        {
+                            id: 15,
+                            img: 'https://static-zmp3.zmdcdn.me/skins/zmp3-v6.1/images/partner_logo/orcahrd.png',
                         },
                     ]}
                 />
