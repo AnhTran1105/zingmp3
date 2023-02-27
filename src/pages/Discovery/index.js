@@ -129,7 +129,73 @@ function Discovery() {
                         },
                     ]}
                 />
-                <LiveStreamSection />
+                <LiveStreamSection
+                    props={[
+                        {
+                            id: 0,
+                            cardImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/f/9/8/a/f98a72ba5fd2f10b47250eb5e720aa3c.jpg',
+                            hostImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/0/8/2/5/0825d8cd559dee502625a25d540c636a.jpg',
+                            title: 'XONE Radio',
+                            subtitle: '143 đang nghe',
+                        },
+                        {
+                            id: 1,
+                            cardImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/f/d/7/9/fd79808d2180de9a421afa6aff38953e.jpg',
+                            hostImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/1/4/6/b/146b49d11cc9b3bc591823bfedb8bce2.jpg',
+                            title: 'V-POP',
+                            subtitle: '936 đang nghe',
+                        },
+                        {
+                            id: 2,
+                            cardImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/6/8/0/3/6803b42e5444830b57a02d3f4d427301.jpg',
+                            hostImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/2/c/c/f/2ccf96f6da468b466c5f8d1188f62eee.jpg',
+                            title: 'Pladio',
+                            subtitle: '98 đang nghe',
+                        },
+                        {
+                            id: 3,
+                            cardImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/e/2/3/5/e235117d191db9f7bbc82a3d31f17e60.jpg',
+                            hostImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/7/7/8/d/778d152062edfbe0e4c4abf151858bf0.jpg',
+                            title: 'Chạm',
+                            subtitle: '248 đang nghe',
+                        },
+                        {
+                            id: 4,
+                            cardImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/6/c/f/9/6cf9a7732fa9f32e0ff8161c20e49f54.jpg',
+                            hostImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/8/5/4/0/854010f76bddeefd5f13305a1d6cc8be.jpg',
+                            title: 'On Air',
+                            subtitle: '53 đang nghe',
+                        },
+                        {
+                            id: 5,
+                            cardImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/4/8/c/e/48cefd41cfc03533d52303190f47e6ef.jpg',
+                            hostImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/1/3/0/5/1305cd954d22d89fef4354301613fd68.jpg',
+                            title: 'Bolero',
+                            subtitle: '434 đang nghe',
+                        },
+                        {
+                            id: 6,
+                            cardImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/d/4/f/f/d4ffcd5734d4dae6266fec08719324f0.jpg',
+                            hostImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/b/0/d/a/b0da7c8ecd6521337682f3a86fa0170f.jpg',
+                            title: 'US-UK',
+                            subtitle: '152 đang nghe',
+                        },
+                    ]}
+                />
                 <NewReleaseSection
                     props={[
                         {
