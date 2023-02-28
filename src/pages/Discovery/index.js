@@ -7,6 +7,7 @@ import LiveStreamSection from '~/components/Layout/components/LiveStreamSection'
 import PlaylistSection from '~/components/Layout/components/PlaylistSection';
 import SlideShow from '~/components/Layout/components/SlideShow';
 import styles from './Discovery.module.scss';
+import HomeChartSection from '~/components/Layout/components/HomeChartSection';
 
 const cx = classNames.bind(styles);
 
@@ -196,6 +197,7 @@ function Discovery() {
                         },
                     ]}
                 />
+                <HomeChartSection />
                 <NewReleaseSection
                     props={[
                         {
