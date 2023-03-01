@@ -1,0 +1,57 @@
+.weekchart-section {
+    margin-top: 28px;
+    margin-bottom: -30px;
+    width: 100%;
+
+    .columns {
+        margin: 0 -14px;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        width: 100%;
+
+        .column {
+            width: 33.33%;
+            position: relative;
+            min-height: 1px;
+            padding-left: 14px;
+            padding-right: 14px;
+            float: left;
+            flex-shrink: 0;
+
+            .zm-card {
+                position: relative;
+
+                &:hover {
+                    .image {
+                        transform: scale(1.1);
+                        transition: transform 0.7s;
+                    }
+                }
+
+                .card-image {
+                    display: block;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 4px;
+
+                    a {
+                        text-decoration: none;
+                        .image {
+                            height: 0;
+                            padding-bottom: 28.57%;
+                            line-height: 0;
+                            height: 0;
+                            border-radius: 5px;
+                            overflow: hidden;
+
+                            img {
+                                transition: transform 0.7s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

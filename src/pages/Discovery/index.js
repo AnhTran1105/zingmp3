@@ -8,6 +8,7 @@ import PlaylistSection from '~/components/Layout/components/PlaylistSection';
 import SlideShow from '~/components/Layout/components/SlideShow';
 import styles from './Discovery.module.scss';
 import HomeChartSection from '~/components/Layout/components/HomeChartSection';
+import WeekChartSection from '~/components/Layout/components/WeekChartSection';
 
 const cx = classNames.bind(styles);
 
@@ -197,7 +198,39 @@ function Discovery() {
                         },
                     ]}
                 />
-                <HomeChartSection />
+                <HomeChartSection
+                    props={[
+                        {
+                            order: 1,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/4/a/d/4/4ad439b918f3356addb5f237c1380ffc.jpg',
+                            songName: 'Em Là Kẻ Đáng Thương',
+                            artists: ['Phát Huy T4'],
+                            percentage: '40%',
+                        },
+                        {
+                            order: 2,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/c/e/3/4/ce34451501c9e64070402a50f7660c07.jpg',
+                            songName: 'Ngoài 30',
+                            artists: ['Thái Học'],
+                            percentage: '33%',
+                        },
+                        {
+                            order: 3,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/2/d/5/c/2d5cc8bc9f930ce292c464e929ea31fb.jpg',
+                            songName: 'Bật Tình Yêu Lên',
+                            artists: ['Tăng Duy Tân', 'Hòa Minzy'],
+                            percentage: '25%',
+                        },
+                    ]}
+                />
+
+                <WeekChartSection
+                    props={[
+                        { id: 0, img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v5.2/images/song-vn-2x.jpg' },
+                        { id: 1, img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v5.2/images/web_song_usuk.jpg' },
+                        { id: 2, img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v5.2/images/web_song_kpop.jpg' },
+                    ]}
+                />
                 <NewReleaseSection
                     props={[
                         {
