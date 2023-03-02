@@ -4,9 +4,9 @@ import styles from './WeekChartSection.module.scss';
 const cx = classNames.bind(styles);
 
 function WeekChartSection({ props }) {
-    const renderItem = props.map((item) => {
+    const renderItem = props.map((item, i) => {
         return (
-            <div key={item.key} className={cx('column')}>
+            <div key={item.id} className={cx('column')}>
                 <div className={cx('zm-card')}>
                     <div className={cx('card-image')}>
                         <a href="#ad">

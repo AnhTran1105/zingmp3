@@ -33,23 +33,27 @@ function PlaylistSection({ props, sectionTitle, moreBtn = false, forFan }) {
                     </a>
                 </div>
                 <div className={cx('card-info')}>
-                    <h4 className={cx('title')}>
-                        {item.title.length < 26 ? (
-                            <a
-                                title={item.title}
-                                href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
-                            >
-                                <span>{item.title}</span>
-                            </a>
-                        ) : (
-                            <a
-                                title={item.title}
-                                href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
-                            >
-                                <span>{item.title.slice(0, 26).concat('...')}</span>
-                            </a>
-                        )}
-                    </h4>
+                    {item.title ? (
+                        <h4 className={cx('title')}>
+                            {item.title.length < 26 ? (
+                                <a
+                                    title={item.title}
+                                    href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
+                                >
+                                    <span>{item.title}</span>
+                                </a>
+                            ) : (
+                                <a
+                                    title={item.title}
+                                    href="/album/10-Nghe-Si-Xuat-Sac-2022-Hoang-Thuy-Linh-AMEE-MONO-Ha-Nhi/6B7EI9ZF.html"
+                                >
+                                    <span>{item.title.slice(0, 26).concat('...')}</span>
+                                </a>
+                            )}
+                        </h4>
+                    ) : (
+                        ''
+                    )}
                     {item.artists ? (
                         <h3 className={cx('subtitle')}>
                             {item.artists.map((artist, i) => {
@@ -95,7 +99,7 @@ function PlaylistSection({ props, sectionTitle, moreBtn = false, forFan }) {
                             </a>
                         </div>
                         <div className={cx('media-content')}>
-                            <h3 className={cx('subtitle')}>dành cho fan</h3>
+                            <h3 className={cx('subtitle')}>{sectionTitle}</h3>
                             <h3 className={cx('title')}>
                                 <a href={`/${forFan.name}`}>{forFan.name}</a>
                             </h3>

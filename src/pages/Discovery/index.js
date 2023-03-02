@@ -9,6 +9,7 @@ import SlideShow from '~/components/Layout/components/SlideShow';
 import styles from './Discovery.module.scss';
 import HomeChartSection from '~/components/Layout/components/HomeChartSection';
 import WeekChartSection from '~/components/Layout/components/WeekChartSection';
+import ArtistsSection from '~/components/Layout/components/ArtistsSection';
 
 const cx = classNames.bind(styles);
 
@@ -17,41 +18,6 @@ function Discovery() {
         <div className={cx('main-page')}>
             <div className={cx('content')}>
                 <SlideShow />
-                <PlaylistSection
-                    sectionTitle={'Nhạc Hay Ho Của 2022 ⭐'}
-                    props={[
-                        {
-                            id: 0,
-                            title: '10 Nghệ Sĩ Xuất Sắc 2022',
-                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/a/d/0/bad05d20e4d804ec53592da82b73f8d6.jpg',
-                            artists: ['Hoàng Thùy Linh', 'Văn Mai Hương', 'AMEE'],
-                        },
-                        {
-                            id: 1,
-                            title: '10 Nghệ Sĩ Xuất Sắc 2022',
-                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/f/e/3/bfe38a668289c6fac1b6659457a3ad49.jpg',
-                            artists: ['Hoàng Thùy Linh', 'Văn Mai Hương', 'AMEE'],
-                        },
-                        {
-                            id: 2,
-                            title: 'Nghệ Sĩ Mới Nổi Bật 2022',
-                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/f/8/4/ff849b97aec21619cb10f522a480f14c.jpg',
-                            artists: ['Hoàng Thùy Linh', 'Văn Mai Hương', 'AMEE'],
-                        },
-                        {
-                            id: 3,
-                            title: 'V-Pop Nổi Bật 2022',
-                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/0/2/8/9/0289857b5e5da497cef2cc590c713fc3.jpg',
-                            artists: ['Hoàng Thùy Linh', 'Văn Mai Hương', 'AMEE'],
-                        },
-                        {
-                            id: 4,
-                            title: 'US-UK Nổi Bật 2022',
-                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/2/3/7/0/2370813dad97bdd6b94a8a90406e9c2a.jpg',
-                            artists: ['Hoàng Thùy Linh', 'Văn Mai Hương', 'AMEE'],
-                        },
-                    ]}
-                />
                 <PlaylistSection
                     sectionTitle={'Gần đây'}
                     moreBtn={true}
@@ -90,6 +56,71 @@ function Discovery() {
                             id: 6,
                             title: 'Top 100 Nhạc Trẻ',
                             img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/8/5/2/d852eba51a52ebbbe73359ae387f4345.jpg',
+                        },
+                    ]}
+                />
+                <PlaylistSection
+                    sectionTitle={'Nhạc Hay Ho Của 2022 ⭐'}
+                    props={[
+                        {
+                            id: 0,
+                            title: '10 Nghệ Sĩ Xuất Sắc 2022',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/a/d/0/bad05d20e4d804ec53592da82b73f8d6.jpg',
+                            artists: ['Hoàng Thùy Linh', 'Văn Mai Hương', 'AMEE'],
+                        },
+                        {
+                            id: 1,
+                            title: '10 Nghệ Sĩ Xuất Sắc 2022',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/b/f/e/3/bfe38a668289c6fac1b6659457a3ad49.jpg',
+                            artists: ['Hoàng Thùy Linh', 'Văn Mai Hương', 'AMEE'],
+                        },
+                        {
+                            id: 2,
+                            title: 'Nghệ Sĩ Mới Nổi Bật 2022',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/f/8/4/ff849b97aec21619cb10f522a480f14c.jpg',
+                            artists: ['Hoàng Thùy Linh', 'Văn Mai Hương', 'AMEE'],
+                        },
+                        {
+                            id: 3,
+                            title: 'V-Pop Nổi Bật 2022',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/0/2/8/9/0289857b5e5da497cef2cc590c713fc3.jpg',
+                            artists: ['Hoàng Thùy Linh', 'Văn Mai Hương', 'AMEE'],
+                        },
+                        {
+                            id: 4,
+                            title: 'US-UK Nổi Bật 2022',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/2/3/7/0/2370813dad97bdd6b94a8a90406e9c2a.jpg',
+                            artists: ['Hoàng Thùy Linh', 'Văn Mai Hương', 'AMEE'],
+                        },
+                    ]}
+                />
+                <PlaylistSection
+                    sectionTitle={'Nữ nghệ sĩ nổi bật 🌹'}
+                    props={[
+                        {
+                            id: 0,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/a/2/b/d/a2bdbad3b7acf3b92b0e29d30903f51e.jpg',
+                            des: "'See Tình' và series Hit tạo nên thương hiệu",
+                        },
+                        {
+                            id: 1,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/images/b/0/4/c/b04c5a560ddbade0b9af9e36b165907e.jpg',
+                            des: "Thay mọi chàng trai... 'Shay nắng' nhạc của AMEE",
+                        },
+                        {
+                            id: 2,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/c/0/7/dc07e6eb440a6382795c661c29c4694c.jpg',
+                            des: "'Ghệ yêu dấu của tlinh ơi', nghe tlinh hát ô kì hem?",
+                        },
+                        {
+                            id: 3,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/images/3/a/3/f/3a3ff40d09e96410b3f97b2cd1b031fb.jpg',
+                            des: 'Vươn ra thế giới cùng âm nhạc của Mỹ Anh',
+                        },
+                        {
+                            id: 4,
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/a/4/7/fa4793406039b9da839ab21ee43b517c.jpg',
+                            des: "'Bật tình yêu lên' cùng nhạc của Hòa Minzy",
                         },
                     ]}
                 />
@@ -198,6 +229,41 @@ function Discovery() {
                         },
                     ]}
                 />
+                <PlaylistSection
+                    sectionTitle={'Nhạc mới mỗi ngày'}
+                    props={[
+                        {
+                            id: 0,
+                            title: 'V-Pop Tháng 3/2023',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/5/4/8/8/5488c2adbd0c2415102bd52d26030482.jpg',
+                            artists: ['Hòa Minzy', 'Hiền Hồ', 'Miina'],
+                        },
+                        {
+                            id: 1,
+                            title: 'US-UK Tháng 3/2023',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/7/7/4/d/774da9673bc6e61614f3fd8273fb6236.jpg',
+                            artists: ['P!nk', 'Clinton Kane', 'The Weeknd'],
+                        },
+                        {
+                            id: 2,
+                            title: 'K-Pop Tháng 3/2023',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/6/6/e/5/66e575133b731456bd51bc689aa58b33.jpg',
+                            artists: ['STAYC', 'XG', 'PURPLE KISS'],
+                        },
+                        {
+                            id: 3,
+                            title: 'C-Pop Tháng 3/2023',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/0/1/8/5/01850f1ab036f1040bab4072320cbe0e.jpg',
+                            artists: ['Yisa Yu', '林俊傑 JJ Lin', 'Lay'],
+                        },
+                        {
+                            id: 4,
+                            title: 'Indie Việt Tháng 3/2023',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/7/6/3/3/7633dfdba7afd8bee61731fd453facc5.jpg',
+                            artists: ['SIVAN', 'Pixel Neko', 'T.R.I'],
+                        },
+                    ]}
+                />
                 <HomeChartSection
                     props={[
                         {
@@ -229,6 +295,38 @@ function Discovery() {
                         { id: 0, img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v5.2/images/song-vn-2x.jpg' },
                         { id: 1, img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v5.2/images/web_song_usuk.jpg' },
                         { id: 2, img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v5.2/images/web_song_kpop.jpg' },
+                    ]}
+                />
+                <ArtistsSection
+                    props={[
+                        {
+                            id: 0,
+                            img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/hoa-minzy.png',
+                        },
+                        {
+                            id: 1,
+                            img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/karik.png',
+                        },
+                        {
+                            id: 2,
+                            img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/mr-siro.png',
+                        },
+                        {
+                            id: 3,
+                            img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/duc-phuc.png',
+                        },
+                        {
+                            id: 4,
+                            img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/huong-ly.png',
+                        },
+                        {
+                            id: 5,
+                            img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/jack.png',
+                        },
+                        {
+                            id: 6,
+                            img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/trinh-thanh-binh.png',
+                        },
                     ]}
                 />
                 <NewReleaseSection
@@ -320,6 +418,45 @@ function Discovery() {
                         },
                     ]}
                 />
+                <PlaylistSection
+                    sectionTitle={'VÌ BẠN QUAN TÂM'}
+                    forFan={{
+                        img: 'https://photo-zmp3.zmdcdn.me/cover/a/5/4/4/a54405ab40d843bc73366684a74203b4.jpg',
+                        name: 'R&B',
+                    }}
+                    props={[
+                        {
+                            id: 0,
+                            title: 'Are & Be',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/e/6/9/2/e6920ea52a04d228cc65e95ad77d0994.jpg',
+                            artists: ['Beyoncé', 'SZA', 'Lucky Daye'],
+                        },
+                        {
+                            id: 1,
+                            title: 'WE ARE',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/5/8/a/c/58ac088ca91326607f2cb1ccef1dd1b4.jpg',
+                            artists: ['John Batiste'],
+                        },
+                        {
+                            id: 2,
+                            title: 'Urban Hits',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/0/8/8/a/088a63ee5c892edda58a2ce671318b8d.jpg',
+                            artists: ['Beyoncé', 'Chris Brown', 'Chloe'],
+                        },
+                        {
+                            id: 3,
+                            title: 'Women of R&B',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/8/4/a/a/84aa98b72b1f58f81ce7578cb0f2f792.jpg',
+                            artists: ['Alicia Keys', 'Beyoncé', 'SZA'],
+                        },
+                        {
+                            id: 4,
+                            title: 'Đỉnh cao R&B',
+                            img: 'https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/a/b/4/0/ab404a3bcdafa17d525140c153de5fbb.jpg',
+                            artists: ['Alicia Keys', 'Usher', 'Chris Brown'],
+                        },
+                    ]}
+                />
                 <NewSongSection
                     props={[
                         {
@@ -386,14 +523,6 @@ function Discovery() {
                     props={[
                         {
                             id: 0,
-                            img: 'https://photo-resize-zmp3.zmdcdn.me/w600_r12x7_webp/event/6/2/e/d/62edf7eebd38da2e99397514179eb06a.jpg',
-                        },
-                        {
-                            id: 1,
-                            img: 'https://photo-resize-zmp3.zmdcdn.me/w600_r12x7_webp/event/6/2/e/d/62edf7eebd38da2e99397514179eb06a.jpg',
-                        },
-                        {
-                            id: 2,
                             img: 'https://photo-resize-zmp3.zmdcdn.me/w600_r12x7_webp/event/6/2/e/d/62edf7eebd38da2e99397514179eb06a.jpg',
                         },
                     ]}

@@ -9,7 +9,7 @@ function NewSongSection({ props }) {
         return (
             <div
                 key={item.id}
-                className={cx('carousel-item', item.id % 3 === 0 || item.id % 3 === 2 ? 'nav-margin' : 'padding')}
+                className={cx('carousel-item', item.id % 3 === 0 || item.id % 3 === 2 ? 'neg-margin' : 'padding')}
             >
                 <div className={cx('new-release-item')}>
                     <div key={item.id} className={cx('media')}>
