@@ -1,14 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import classNames from 'classnames/bind';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { ThemeIcon } from '~/components/Icons';
 import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
-
 function Header() {
+    const [posY, setPosY] = useState(0);
+    useEffect(() => {
+        const handleScroll = (e) => setPosY(window.pageYOffset);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    });
+
     return (
-        <div className={cx('header')}>
+        <div className={cx('header', posY > 0 ? 'is-sticky' : '')}>
             <div className={cx('level')}>
                 <div className={cx('level-left')}>
                     <button className={cx('btn', 'disabled', 'back-btn')}>

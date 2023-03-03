@@ -1,3 +1,9 @@
+.is-sticky {
+    &:before {
+        bottom: 0 !important;
+    }
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -20,10 +26,9 @@
         bottom: 100%;
         z-index: 1;
         background-color: var(--layout-header-bg);
-        -webkit-backdrop-filter: blur(50px);
         backdrop-filter: blur(50px);
-        width: calc(100% + 2px);
         box-shadow: 0 3px 5px var(--sticky-header-box-shadow);
+        width: calc(100% + 2px);
     }
 
     .level {
@@ -46,6 +51,8 @@
                 border-radius: 999px;
                 display: flex;
                 align-items: center;
+                color: var(--white);
+                line-height: 16px;
 
                 .back-icon {
                     font-size: 24px;
@@ -91,6 +98,10 @@
                         border-radius: 999px;
                         display: flex;
                         align-items: center;
+
+                        &:hover {
+                            filter: brightness(0.9);
+                        }
 
                         .search-icon {
                             position: absolute;
@@ -150,8 +161,16 @@
                     padding: 10px 24px;
                     align-items: center;
                     font-weight: 600;
+                    font-size: 14px;
+
+                    &:hover {
+                        filter: brightness(0.9);
+                        cursor: pointer;
+                    }
 
                     .download-icon {
+                        display: flex;
+                        align-items: center;
                         margin-right: 4px;
                     }
                 }
@@ -186,12 +205,51 @@
                     background-color: var(--alpha-bg);
                     border-radius: 999px;
 
+                    &:hover {
+                        cursor: pointer;
+                        filter: brightness(0.9);
+                    }
+
                     .icon {
                         color: var(--setting-icon-text);
                         font-size: 20px;
                         padding: 5px;
                         border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
+
+                    .vip-icon {
+                        &:before {
+                            content: '\ea73';
+                        }
+                    }
+
+                    .gear-icon {
+                        &:before {
+                            content: '\e001';
+                        }
+                    }
+                }
+            }
+
+            .avatar {
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    cursor: pointer;
+                    filter: brightness(0.9);
+                }
+
+                .image {
+                    overflow: hidden;
+                    border-radius: 999px;
+                    width: 38px;
+                    height: 38px;
                 }
             }
         }

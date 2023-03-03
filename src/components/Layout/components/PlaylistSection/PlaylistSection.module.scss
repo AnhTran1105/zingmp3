@@ -17,11 +17,12 @@
     justify-content: space-between;
     align-items: center;
     text-transform: capitalize;
+    font-weight: 600;
 }
 
 .next-btn {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -76,11 +77,11 @@
             margin-bottom: 4px;
 
             a {
-                line-height: 1.36;
+                line-height: 19.04px;
                 color: var(--text-primary);
                 text-transform: none;
                 font-size: 14px;
-                font-weight: 700;
+                font-weight: 600;
                 // avoid size of flex item error
                 // white-space: nowrap;
                 overflow: hidden;
@@ -96,9 +97,8 @@
         .subtitle {
             color: var(--text-secondary);
             font-size: 14px;
-            line-height: 1.33;
-            font-family: 'Roboto';
-            font-weight: 600;
+            line-height: 18.62px;
+            font-weight: 300;
 
             a {
                 color: var(--text-secondary);
@@ -248,16 +248,16 @@
         justify-content: center;
 
         .subtitle {
-            font-family: 'Roboto';
-            font-size: 15px;
+            font-size: 14px;
             margin-top: 3px;
             color: var(--text-secondary);
-            font-weight: 600;
+            font-weight: 300;
             text-transform: uppercase;
         }
 
         .title {
             margin: 0;
+            font-weight: 600;
 
             > a {
                 color: var(--text-primary);

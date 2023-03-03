@@ -125,6 +125,7 @@ function Discovery() {
                     ]}
                 />
                 <PlaylistSection
+                    sectionTitle={'Dành cho fan'}
                     forFan={{
                         img: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/4/8/9/1/4891c7eef87e3ac85a50a2fba2674f5a.jpg',
                         name: 'Binz',
