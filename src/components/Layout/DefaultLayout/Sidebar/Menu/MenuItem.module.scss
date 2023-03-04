@@ -29,7 +29,6 @@
         }
 
         .play-outline-btn {
-            color: #fff;
             font-size: 20px;
             position: absolute;
             right: 0;
@@ -37,6 +36,7 @@
             display: none;
 
             .play-outline-icon {
+                color: #fff;
                 &:before {
                     content: '\e9ec';
                 }

@@ -328,6 +328,22 @@ function Discovery() {
                             id: 6,
                             img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/trinh-thanh-binh.png',
                         },
+                        {
+                            id: 7,
+                            img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/chi-dan.png',
+                        },
+                        {
+                            id: 8,
+                            img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/onlyc.png',
+                        },
+                        {
+                            id: 9,
+                            img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/erik.png',
+                        },
+                        {
+                            id: 10,
+                            img: 'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/justatee.png',
+                        },
                     ]}
                 />
                 <NewReleaseSection

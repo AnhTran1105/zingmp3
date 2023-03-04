@@ -3,91 +3,103 @@
     width: 100%;
     position: relative;
 
-    .carousel-wrapper {
+    .carousel-container {
         position: relative;
 
-        .carousel {
-            display: flex;
-            width: calc(100% + 28px);
-            user-select: none;
+        .carousel-wrapper {
             overflow: hidden;
-            margin: 0 -14px;
 
-            .carousel-item {
-                width: calc(100% / 7);
-                padding: 0 14px;
-                .artist {
-                    position: relative;
-                    .image {
-                        height: 0;
-                        padding-bottom: 120%;
-                        background-color: transparent;
+            .carousel {
+                display: flex;
+                width: calc(100% + 28px);
+                user-select: none;
+                margin: 0 -14px;
+                z-index: 3;
+                transition: transform 0.3s ease 0.1s;
 
-                        &:hover {
-                            filter: brightness(0.8);
+                .carousel-item {
+                    width: calc(100% / 7);
+                    padding: 0 14px;
+                    float: left;
+                    flex-shrink: 0;
+
+                    .artist {
+                        position: relative;
+                        .image {
+                            height: 0;
+                            padding-bottom: 120%;
+                            background-color: transparent;
+
+                            &:hover {
+                                filter: brightness(0.8);
+                            }
                         }
                     }
                 }
             }
-        }
 
-        .prev-btn {
-            left: -19px;
-            top: 50%;
-            transform: translateY(-50%);
-            border-radius: 999px;
-            z-index: 3;
-            position: absolute;
-            width: 38px;
-            height: 38px;
-            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
-            background-color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--alpha-bg);
-            cursor: default;
+            .disabled {
+                background-color: var(--alpha-bg);
+                cursor: default;
+                opacity: 0.1;
+            }
 
-            .go-left-icon {
-                color: var(--black);
-                font-size: 18px;
-                vertical-align: middle;
+            .prev-btn {
+                left: -19px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 999px;
+                z-index: 4;
+                position: absolute;
+                width: 38px;
+                height: 38px;
+                box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+                background-color: var(--white);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-                &::before {
-                    content: '\7a';
+                .go-left-icon {
+                    color: var(--black);
+                    font-size: 18px;
+                    vertical-align: middle;
+
+                    &::before {
+                        content: '\7a';
+                    }
                 }
             }
-        }
 
-        .next-btn {
-            right: -19px;
-            top: 50%;
-            transform: translateY(calc(-50%));
-            background-color: var(--alpha-bg);
-            border-radius: 999px;
-            z-index: 3;
-            position: absolute;
-            width: 38px;
-            height: 38px;
-            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
-            background-color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            .next-btn {
+                right: -19px;
+                top: 50%;
+                transform: translateY(calc(-50%));
+                background-color: var(--alpha-bg);
+                border-radius: 999px;
+                z-index: 4;
+                position: absolute;
+                width: 38px;
+                height: 38px;
+                box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+                background-color: var(--white);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-            &:hover {
-                filter: brightness(0.9);
-            }
+                &:hover {
+                    filter: brightness(0.9);
+                }
 
-            .go-right-icon {
-                color: var(--black);
-                font-size: 18px;
-                vertical-align: middle;
+                .go-right-icon {
+                    color: var(--black);
+                    font-size: 18px;
+                    vertical-align: middle;
 
-                &::before {
-                    content: '\41';
+                    &::before {
+                        content: '\41';
+                    }
                 }
             }
         }
