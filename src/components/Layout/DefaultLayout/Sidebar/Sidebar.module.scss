@@ -98,31 +98,37 @@
         color: #fff;
         font-size: 12px;
         margin: 0 28px 8px;
-        padding-top: 8px;
+        height: 26px;
         justify-content: space-between;
-        line-height: 28px;
+        line-height: normal;
+        align-items: center;
 
-        p {
-            font-weight: 700;
+        &:hover {
+            .edit-btn {
+                display: block !important;
+            }
         }
 
-        .icon {
-            border-radius: 50%;
-            padding: 5px;
-            width: 25px;
-            height: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: transparent;
+        p {
+            font-weight: 600;
+        }
 
+        .edit-btn {
+            display: none;
             &:hover {
                 cursor: pointer;
                 background-color: var(--alpha-bg);
             }
 
-            span {
-                display: none;
+            .edit-icon {
+                font-size: 16px;
+                padding: 5px;
+                border-radius: 50%;
+                color: var(--text-primary);
+
+                &:before {
+                    content: '\33';
+                }
             }
         }
     }
@@ -135,29 +141,36 @@
 }
 
 .create-playlist {
-    width: 240px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-size: 14px;
-    padding: 0 28px;
-    font-weight: 700;
-    border-top: 1px solid var(--border-primary);
-    height: 54px;
+    .add-btn {
+        position: fixed;
+        width: 240px;
+        left: 0;
+        bottom: 0;
+        height: 54px;
+        border-top: 1px solid var(--border-primary);
+        padding: 0 28px;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        color: var(--text-primary);
+        font-weight: 700;
 
-    i {
-        font-size: 18px;
-    }
+        .add-icon {
+            font-size: 18px;
+            font-weight: 300;
 
-    span {
-        margin-left: 14px;
-    }
+            &:before {
+                content: '\62';
+            }
+        }
 
-    &:hover {
-        cursor: pointer;
-        color: #dadada;
+        span {
+            margin-left: 14px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: #dadada;
+        }
     }
 }
