@@ -5,7 +5,7 @@ import NewSongSection from '~/components/Layout/components/NewSongSection';
 import PartnerSection from '~/components/Layout/components/PartnerSection';
 import LiveStreamSection from '~/components/Layout/components/LiveStreamSection';
 import PlaylistSection from '~/components/Layout/components/PlaylistSection';
-import SlideShow from '~/components/Layout/components/SlideShow';
+import GallerySection from '~/components/Layout/components/GallerySection';
 import styles from './Discovery.module.scss';
 import HomeChartSection from '~/components/Layout/components/HomeChartSection';
 import WeekChartSection from '~/components/Layout/components/WeekChartSection';
@@ -17,7 +17,34 @@ function Discovery() {
     return (
         <div className={cx('main-page')}>
             <div className={cx('content')}>
-                <SlideShow />
+                <GallerySection
+                    props={[
+                        {
+                            id: 0,
+                            img: 'https://photo-zmp3.zmdcdn.me/banner/6/1/7/f/617fea08d0f58f46df9a54361252f061.jpg',
+                        },
+                        {
+                            id: 1,
+                            img: 'https://photo-zmp3.zmdcdn.me/banner/2/e/9/f/2e9f2a22bcaa9a69a1ff4ef59294dbfd.jpg',
+                        },
+                        {
+                            id: 2,
+                            img: 'https://photo-zmp3.zmdcdn.me/banner/7/b/1/1/7b11b2f20518c3cb83a040e3a4001681.jpg',
+                        },
+                        {
+                            id: 3,
+                            img: 'https://photo-zmp3.zmdcdn.me/banner/d/3/6/f/d36f4338842a108aa23e6edef3db1de7.jpg',
+                        },
+                        {
+                            id: 4,
+                            img: 'https://photo-zmp3.zmdcdn.me/banner/d/7/e/7/d7e7bbef348f8f48d4fcc486599decbc.jpg',
+                        },
+                        {
+                            id: 5,
+                            img: 'https://photo-zmp3.zmdcdn.me/banner/b/8/8/b/b88b2e1141ec5818e61e974747fc36ad.jpg',
+                        },
+                    ]}
+                />
                 <PlaylistSection
                     sectionTitle={'Gần đây'}
                     moreBtn={true}
@@ -227,6 +254,33 @@ function Discovery() {
                                 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/b/0/d/a/b0da7c8ecd6521337682f3a86fa0170f.jpg',
                             title: 'US-UK',
                             subtitle: '152 đang nghe',
+                        },
+                        {
+                            id: 7,
+                            cardImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/b/c/2/1/bc2115886f2e2e9f7cf2fa28a39cda12.jpg',
+                            hostImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/c/f/2/4/cf2428f7e56a8c2a52d84cb106891de2.jpg',
+                            title: 'K-POP',
+                            subtitle: '123 đang nghe',
+                        },
+                        {
+                            id: 8,
+                            cardImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/e/f/b/0/efb05fb9097a7057aecef6ecb62bff5a.jpg',
+                            hostImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/0/9/9/3/0993b3110c60ba6518fceeba9913d20d.jpg',
+                            title: 'Acoustic',
+                            subtitle: '518 đang nghe',
+                        },
+                        {
+                            id: 9,
+                            cardImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/b/f/2/2/bf223818f85e7fe129091b415038ca6c.jpg',
+                            hostImg:
+                                'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/avatars/b/f/3/b/bf3bf87a788a5d0b8719c6feee774a2e.jpg',
+                            title: 'Rap Việt',
+                            subtitle: '132 đang nghe',
                         },
                     ]}
                 />

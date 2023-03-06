@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './LiveStreamSection.module.scss';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 const svgStyle = {
@@ -7,6 +8,20 @@ const svgStyle = {
 };
 
 function LiveStreamSection({ props }) {
+    const [offsetX, setOffSetX] = useState(0);
+
+    const handleLeftTransform = () => {
+        setOffSetX(offsetX + 517.71);
+    };
+
+    const handleRightTransform = () => {
+        setOffSetX(offsetX - 517.71);
+    };
+
+    const transformStyle = {
+        transform: `translateX(${offsetX}px)`,
+    };
+
     const renderItem = props.map((item) => {
         return (
             <div key={item.id} className={cx('item')}>
@@ -74,14 +89,26 @@ function LiveStreamSection({ props }) {
                     <i className={cx('icon', 'go-right-icon')}></i>
                 </a>
             </h3>
-            <div className={cx('carousel-wrapper')}>
-                <div className={cx('carousel')}>{renderItem}</div>
-                <button className={cx('btn', 'prev-btn')}>
-                    <i className={cx('icon', 'go-left-icon')}></i>
-                </button>
-                <button className={cx('btn', 'next-btn')}>
-                    <i className={cx('icon', 'go-right-icon')}></i>
-                </button>
+            <div className={cx('carousel-container')}>
+                <div className={cx('carousel-wrapper')}>
+                    <div style={transformStyle} className={cx('carousel')}>
+                        {renderItem}
+                    </div>
+                    <button
+                        disabled={offsetX === 0 ? true : false}
+                        onClick={handleLeftTransform}
+                        className={cx('btn', 'prev-btn', offsetX === 0 ? 'disabled' : '')}
+                    >
+                        <i className={cx('icon', 'go-left-icon')}></i>
+                    </button>
+                    <button
+                        disabled={offsetX === -517.71 ? true : false}
+                        onClick={handleRightTransform}
+                        className={cx('btn', 'next-btn', offsetX === -517.71 ? 'disabled' : '')}
+                    >
+                        <i className={cx('icon', 'go-right-icon')}></i>
+                    </button>
+                </div>
             </div>
         </div>
     );

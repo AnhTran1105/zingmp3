@@ -7,18 +7,8 @@ const cx = classNames.bind(styles);
 
 function ArtistsSection({ props }) {
     const [time, setTime] = useState(Date.now());
-
-    useEffect(() => {
-        const interval = setInterval(() => setTime(Date.now()), 5000);
-        if (offsetX === 0) handleRightTransform();
-        else handleLeftTransform();
-        return () => {
-            clearInterval(interval);
-        };
-    }, [time]);
-
     const [offsetX, setOffSetX] = useState(0);
-    const handleTransform = {
+    const transformStyle = {
         transform: `translateX(${offsetX}px)`,
     };
 
@@ -29,6 +19,16 @@ function ArtistsSection({ props }) {
     const handleLeftTransform = () => {
         setOffSetX(offsetX + 690.28);
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => setTime(Date.now()), 5000);
+        if (offsetX === 0) handleRightTransform();
+        else handleLeftTransform();
+        return () => {
+            clearInterval(interval);
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [time]);
 
     const renderItem = props.map((item) => {
         return (
@@ -46,7 +46,7 @@ function ArtistsSection({ props }) {
         <div className={cx('artists-section')}>
             <div className={cx('carousel-container')}>
                 <div className={cx('carousel-wrapper')}>
-                    <div className={cx('carousel')} style={handleTransform}>
+                    <div className={cx('carousel')} style={transformStyle}>
                         {renderItem}
                     </div>
                     <button
