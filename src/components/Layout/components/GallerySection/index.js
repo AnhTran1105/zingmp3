@@ -4,51 +4,52 @@ import { useState, useEffect, useRef } from 'react';
 
 const cx = classNames.bind(styles);
 
-const offSetValues = [0, 0, 0, 0, 0, 0];
+const offSetValues = [
+    [-300, -300, -300, -300, -300, -300],
+    [200, -400, -400, -400, -400, -400],
+    [100, 100, -500, -500, -500, -500],
+    [0, 0, 0, -600, -600, -600],
+    [-100, -100, -100, -100, -700, -700],
+    [-200, -200, -200, -200, -200, -800],
+];
 let count = 0;
 let clicked = false;
+let index = 0;
 
 function GallerySection({ props }) {
-    const [offSetX, setOffSetX] = useState(offSetValues);
+    const [offSetX, setOffSetX] = useState(offSetValues[0]);
     const [time, setTime] = useState(Date.now());
     const galleryItems = useRef([]);
-    const prevOffSetX = useRef([]);
 
-    // 200 100 0
+    function leftTransform(arr) {
+        if (index !== arr.length - 1) index++;
+        else index = 0;
+        return arr[index];
+    }
 
-    function changeArray(arr) {
-        let flag = false;
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i] <= -300 && flag === false) {
-                flag = true;
-                arr[i] = 300 - i * 100;
-            }
-            arr[i] = arr[i] - 100;
-        }
-        return arr;
+    function rightTransform(arr) {
+        if (index !== 0) index--;
+        else index = arr.length - 1;
+        return arr[index];
     }
 
     useEffect(() => {
-        setTimeout(() => {}, 15000);
-    });
-
-    useEffect(() => {
-        prevOffSetX.current = offSetX;
         count++;
         let interval;
 
-        if (clicked === true) {
-            clicked = false;
-            setTimeout(() => {
-                interval = setInterval(() => setTime(Date.now()), 6000);
-            }, 9000);
+        if (!clicked) {
+            interval = setInterval(() => setTime(Date.now()), 4000);
         } else {
-            interval = setInterval(() => setTime(Date.now()), 6000);
+            setTimeout(() => {
+                clicked = false;
+                setTime(Date.now());
+            }, 15000);
         }
 
-        if (count > 1) {
-            setOffSetX(changeArray(offSetX));
+        if (count > 2 && !clicked) {
+            setOffSetX(leftTransform(offSetValues));
         }
+
         return () => {
             clearInterval(interval);
         };
@@ -57,14 +58,17 @@ function GallerySection({ props }) {
 
     const handleLeftTransform = () => {
         clicked = true;
-        setOffSetX(changeArray(offSetX));
+
+        setOffSetX(leftTransform(offSetValues));
         for (let i = 0; i < galleryItems.current.length; i++) {
             galleryItems.current[i].style.transform = `translateX(${offSetX[i]}%)`;
         }
     };
 
     const handleRightTransform = () => {
-        setOffSetX(prevOffSetX.current);
+        clicked = true;
+
+        setOffSetX(rightTransform(offSetValues));
         for (let i = 0; i < galleryItems.current.length; i++) {
             galleryItems.current[i].style.transform = `translateX(${offSetX[i]}%)`;
         }
