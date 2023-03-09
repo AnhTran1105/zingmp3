@@ -240,16 +240,16 @@
                 align-items: center;
                 justify-content: center;
 
-                &:hover {
-                    cursor: pointer;
-                    filter: brightness(0.9);
-                }
-
                 .image {
                     overflow: hidden;
                     border-radius: 999px;
                     width: 38px;
                     height: 38px;
+
+                    &:hover {
+                        cursor: pointer;
+                        filter: brightness(0.9);
+                    }
                 }
             }
         }

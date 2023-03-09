@@ -2,13 +2,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import classNames from 'classnames/bind';
 import { useState } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { ThemeIcon } from '~/components/Icons';
+import Menu from '../Menu';
 import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 function Header() {
     const [posY, setPosY] = useState(0);
+
+    const menu = useRef();
+
+    const handleShowMenu = () => {
+        menu.current.style.visibility = 'visible';
+    };
+
     useEffect(() => {
         const handleScroll = (e) => setPosY(window.pageYOffset);
         window.addEventListener('scroll', handleScroll);
@@ -87,10 +95,32 @@ function Header() {
                             <i className={cx('icon', 'gear-icon')}></i>
                         </button>
                     </div>
-                    <div className={cx('avatar')}>
+                    <div onClick={handleShowMenu} className={cx('avatar')}>
                         <figure className={cx('image')}>
                             <img alt="" src={require('~/assets/images/profile.jpg')} />
                         </figure>
+                        <Menu
+                            ref={menu}
+                            props={[
+                                {
+                                    id: 0,
+                                    title: 'Nâng cấp VIP',
+                                },
+                                {
+                                    id: 1,
+                                    title: 'Mua code VIP',
+                                },
+                                {
+                                    id: 2,
+                                    title: 'Danh sách chặn',
+                                },
+                                {
+                                    id: 3,
+                                    title: 'Tải lên',
+                                },
+                                { id: 4, title: 'Đăng xuất' },
+                            ]}
+                        />
                     </div>
                 </div>
             </div>
