@@ -1,43 +1,49 @@
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
 import React from 'react';
+import styled from 'styled-components';
 
 const cx = classNames.bind(styles);
+const PseudoIcon = styled.i`
+    &:before {
+        content: '${(item) => item.pseudoIcon}';
+    }
+`;
 
-const Menu = React.forwardRef(({ props }, ref) => {
-    const handleCloseMenu = () => {
-        document.addEventListener('mousedown', () => {
-            ref.current.style.visibility = 'hidden';
-        });
-    };
-
+function Menu({ props }) {
     const renderItems = props.map((item) => {
         return (
-            <li key={item.id} className={cx('item')}>
+            <li key={item.id} className={cx(item.line ? 'line-separator' : 'item')}>
                 <button className={cx('btn', 'menu-btn')}>
-                    <i className={cx('icon', 'prefix-icon')}></i>
+                    {item.prefixIcon.type === 'pseudo' ? (
+                        <PseudoIcon
+                            pseudoIcon={item.prefixIcon.icon}
+                            className={cx('icon', 'prefix-icon')}
+                        ></PseudoIcon>
+                    ) : (
+                        <i className={cx('icon', 'prefix-icon')}>{item.prefixIcon.icon ? item.prefixIcon.icon : ''}</i>
+                    )}
                     <span className={cx('item-title')}>{item.title}</span>
-                    <i className={cx('icon', 'postfix-icon')}>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path
-                                d="M12.5 4.5L4.5 12.5M12.5 4.5H6.5M12.5 4.5V10.5"
-                                stroke="currentColor"
-                                strokeOpacity="0.4"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            ></path>
-                        </svg>
-                    </i>
+                    {item.postfixIcon.type === 'pseudo' ? (
+                        <PseudoIcon
+                            pseudoIcon={item.postfixIcon.icon}
+                            className={cx('icon', 'postfix-icon')}
+                        ></PseudoIcon>
+                    ) : (
+                        <i className={cx('icon', 'postfix-icon')}>
+                            {item.postfixIcon.icon ? item.postfixIcon.icon : ''}
+                        </i>
+                    )}
                 </button>
             </li>
         );
     });
 
     return (
-        <div ref={ref} onMouseLeave={handleCloseMenu} className={cx('menu')}>
+        <div className={cx('menu')}>
             <ul className={cx('menu-items')}>{renderItems}</ul>
         </div>
     );
-});
+}
 
 export default Menu;
