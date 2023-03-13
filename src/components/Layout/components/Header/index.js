@@ -104,24 +104,24 @@ function Header() {
                             <i className={cx('icon', 'vip-icon')}></i>
                         </button>
                     </a>
-                    <Tippy
-                        visible={settingVisible}
-                        onClickOutside={() => {
-                            setSettingVisible(false);
-                        }}
-                        delay={[0, 500]}
-                        offset={[20, 0]}
-                        interactive
-                        render={(attrs) => (
-                            <Menu
-                                {...attrs}
-                                props={[
-                                    {
-                                        id: 0,
-                                        title: 'Trình phát nhạc',
-                                        prefixIcon: {
-                                            type: 'svg',
-                                            icon: (
+                    <div>
+                        <Tippy
+                            visible={settingVisible}
+                            onClickOutside={() => {
+                                setSettingVisible(false);
+                            }}
+                            delay={[0, 500]}
+                            offset={[20, 0]}
+                            interactive
+                            render={(attrs) => (
+                                <Menu
+                                    {...attrs}
+                                    isSubMenu
+                                    props={[
+                                        {
+                                            id: 0,
+                                            title: 'Trình phát nhạc',
+                                            prefixIcon: (
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                                                     <path
                                                         fillRule="evenodd"
@@ -130,18 +130,81 @@ function Header() {
                                                     ></path>
                                                 </svg>
                                             ),
+                                            postfixIcon: '\\41',
+                                            subMenu: [
+                                                {
+                                                    id: 0,
+                                                    title: 'Chuyển bài mượt mà (Crossfade)',
+                                                    content: (
+                                                        <>
+                                                            <div className={cx('duration-bar', 'disabled')}>
+                                                                <div className={cx('slider-bar')}>
+                                                                    <div
+                                                                        aria-valuemax="15"
+                                                                        aria-valuemin="1"
+                                                                        aria-valuenow="8"
+                                                                        draggable="false"
+                                                                        role="slider"
+                                                                        className={cx('slider-handle')}
+                                                                        style={styles}
+                                                                    ></div>
+                                                                </div>
+                                                            </div>
+                                                            <p className={cx('time-crossfade')}>8 giây</p>
+                                                        </>
+                                                    ),
+                                                    postfixIcon: (
+                                                        <svg
+                                                            id="Layer_1"
+                                                            x="0px"
+                                                            y="0px"
+                                                            width="24px"
+                                                            height="15px"
+                                                            viewBox="0 0 24 15"
+                                                        >
+                                                            <path
+                                                                id="Rectangle-8"
+                                                                className={cx('st0')}
+                                                                d="M7.5,0h9C20.6,0,24,3.4,24,7.5l0,0c0,4.1-3.4,7.5-7.5,7.5h-9C3.4,15,0,11.6,0,7.5l0,0 C0,3.4,3.4,0,7.5,0z"
+                                                                style={{ fill: '#a0a0a0' }}
+                                                            ></path>
+                                                            <circle
+                                                                id="Oval-2"
+                                                                className={cx('st1')}
+                                                                cx="7.5"
+                                                                cy="7.5"
+                                                                r="6.5"
+                                                                style={{
+                                                                    fillRule: 'evenodd',
+                                                                    clipRule: 'evenodd',
+                                                                    fill: '#ffffff',
+                                                                }}
+                                                            ></circle>
+                                                        </svg>
+                                                    ),
+                                                },
+                                                {
+                                                    id: 1,
+                                                    title: 'Chuyển bài mượt mà (Crossfade)',
+                                                },
+                                                {
+                                                    id: 4,
+                                                    line: true,
+                                                },
+                                                {
+                                                    id: 2,
+                                                    title: 'Chuyển bài mượt mà (Crossfade)',
+                                                },
+                                                {
+                                                    id: 3,
+                                                    title: 'Chuyển bài mượt mà (Crossfade)',
+                                                },
+                                            ],
                                         },
-                                        postfixIcon: {
-                                            type: 'pseudo',
-                                            icon: '\\41',
-                                        },
-                                    },
-                                    {
-                                        id: 1,
-                                        title: 'Giao diện',
-                                        prefixIcon: {
-                                            type: 'svg',
-                                            icon: (
+                                        {
+                                            id: 1,
+                                            title: 'Giao diện',
+                                            prefixIcon: (
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                                                     <path
                                                         fillRule="evenodd"
@@ -151,28 +214,25 @@ function Header() {
                                                     ></path>
                                                 </svg>
                                             ),
+                                            postfixIcon: '\\41',
                                         },
-                                        postfixIcon: {
-                                            type: 'pseudo',
-                                            icon: '\\41',
+                                        {
+                                            id: 4,
+                                            line: true,
                                         },
-                                    },
-                                    {
-                                        id: 4,
-                                        line: true,
-                                    },
-                                    {
-                                        id: 2,
-                                        title: 'Giới thiệu',
-                                        prefixIcon: { type: 'pseudo', icon: '\\e9e4' },
-                                    },
-                                    {
-                                        id: 3,
-                                        title: 'Liên hệ',
-                                        prefixIcon: { type: 'pseudo', icon: '\\e9c4' },
-                                        postfixIcon: {
-                                            type: 'svg',
-                                            icon: (
+                                        {
+                                            id: 2,
+                                            title: 'Giới thiệu',
+                                            prefixIcon: '\\e9e4',
+                                            style: {
+                                                color: 'var(--text-secondary)',
+                                            },
+                                        },
+                                        {
+                                            id: 3,
+                                            title: 'Liên hệ',
+                                            prefixIcon: '\\e9c4',
+                                            postfixIcon: (
                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                     <path
                                                         d="M12.5 4.5L4.5 12.5M12.5 4.5H6.5M12.5 4.5V10.5"
@@ -183,15 +243,15 @@ function Header() {
                                                     ></path>
                                                 </svg>
                                             ),
+                                            style: {
+                                                color: 'var(--text-secondary)',
+                                            },
                                         },
-                                    },
-                                    {
-                                        id: 5,
-                                        title: 'Quảng cáo',
-                                        prefixIcon: { type: 'pseudo', icon: '\\e9c2' },
-                                        postfixIcon: {
-                                            type: 'svg',
-                                            icon: (
+                                        {
+                                            id: 5,
+                                            title: 'Quảng cáo',
+                                            prefixIcon: '\\e9c2',
+                                            postfixIcon: (
                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                     <path
                                                         d="M12.5 4.5L4.5 12.5M12.5 4.5H6.5M12.5 4.5V10.5"
@@ -202,15 +262,15 @@ function Header() {
                                                     ></path>
                                                 </svg>
                                             ),
+                                            style: {
+                                                color: 'var(--text-secondary)',
+                                            },
                                         },
-                                    },
-                                    {
-                                        id: 6,
-                                        title: 'Thỏa thuận sử dụng',
-                                        prefixIcon: { type: 'pseudo', icon: '\\21' },
-                                        postfixIcon: {
-                                            type: 'svg',
-                                            icon: (
+                                        {
+                                            id: 6,
+                                            title: 'Thỏa thuận sử dụng',
+                                            prefixIcon: '\\21',
+                                            postfixIcon: (
                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                     <path
                                                         d="M12.5 4.5L4.5 12.5M12.5 4.5H6.5M12.5 4.5V10.5"
@@ -221,15 +281,15 @@ function Header() {
                                                     ></path>
                                                 </svg>
                                             ),
+                                            style: {
+                                                color: 'var(--text-secondary)',
+                                            },
                                         },
-                                    },
-                                    {
-                                        id: 7,
-                                        title: 'Chính sách bảo mật',
-                                        prefixIcon: { type: 'pseudo', icon: '\\e983' },
-                                        postfixIcon: {
-                                            type: 'svg',
-                                            icon: (
+                                        {
+                                            id: 7,
+                                            title: 'Chính sách bảo mật',
+                                            prefixIcon: '\\e983',
+                                            postfixIcon: (
                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                     <path
                                                         d="M12.5 4.5L4.5 12.5M12.5 4.5H6.5M12.5 4.5V10.5"
@@ -240,41 +300,40 @@ function Header() {
                                                     ></path>
                                                 </svg>
                                             ),
+                                            style: {
+                                                color: 'var(--text-secondary)',
+                                            },
                                         },
-                                    },
-                                ]}
-                            />
-                        )}
-                    >
-                        <div onClick={handleShowSettingMenu} className={cx('setting-item')}>
-                            <button className={cx('btn', 'gear-icon')} tabIndex="0">
-                                <i className={cx('icon', 'gear-icon')}></i>
-                            </button>
-                        </div>
-                    </Tippy>
+                                    ]}
+                                />
+                            )}
+                        >
+                            <div onClick={handleShowSettingMenu} className={cx('setting-item')}>
+                                <button className={cx('btn', 'gear-icon')} tabIndex="0">
+                                    <i className={cx('icon', 'gear-icon')}></i>
+                                </button>
+                            </div>
+                        </Tippy>
+                    </div>
 
-                    <Tippy
-                        visible={avatarVisible}
-                        onClickOutside={() => {
-                            setAvatarVisible(false);
-                        }}
-                        delay={[0, 500]}
-                        offset={[19, 0]}
-                        interactive
-                        render={(attrs) => (
-                            <Menu
-                                {...attrs}
-                                props={[
-                                    {
-                                        id: 0,
-                                        title: 'Nâng cấp VIP',
-                                        prefixIcon: {
-                                            type: 'pseudo',
-                                            icon: '\\ea73',
-                                        },
-                                        postfixIcon: {
-                                            type: 'svg',
-                                            icon: (
+                    <div>
+                        <Tippy
+                            visible={avatarVisible}
+                            onClickOutside={() => {
+                                setAvatarVisible(false);
+                            }}
+                            delay={[0, 500]}
+                            offset={[19, 0]}
+                            interactive
+                            render={(attrs) => (
+                                <Menu
+                                    {...attrs}
+                                    props={[
+                                        {
+                                            id: 0,
+                                            title: 'Nâng cấp VIP',
+                                            prefixIcon: '\\ea73',
+                                            postfixIcon: (
                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                     <path
                                                         d="M12.5 4.5L4.5 12.5M12.5 4.5H6.5M12.5 4.5V10.5"
@@ -286,17 +345,11 @@ function Header() {
                                                 </svg>
                                             ),
                                         },
-                                    },
-                                    {
-                                        id: 1,
-                                        title: 'Mua code VIP',
-                                        prefixIcon: {
-                                            type: 'pseudo',
-                                            icon: '\\ea73',
-                                        },
-                                        postfixIcon: {
-                                            type: 'svg',
-                                            icon: (
+                                        {
+                                            id: 1,
+                                            title: 'Mua code VIP',
+                                            prefixIcon: '\\ea6e',
+                                            postfixIcon: (
                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                     <path
                                                         d="M12.5 4.5L4.5 12.5M12.5 4.5H6.5M12.5 4.5V10.5"
@@ -308,32 +361,32 @@ function Header() {
                                                 </svg>
                                             ),
                                         },
-                                    },
-                                    {
-                                        id: 2,
-                                        title: 'Danh sách chặn',
-                                        prefixIcon: { type: 'pseudo', icon: '\\e9d1' },
-                                    },
-                                    {
-                                        id: 3,
-                                        title: 'Tải lên',
-                                        prefixIcon: { type: 'pseudo', icon: '\\21' },
-                                    },
-                                    {
-                                        id: 4,
-                                        line: true,
-                                    },
-                                    { id: 5, title: 'Đăng xuất', prefixIcon: { type: 'pseudo', icon: '\\3a' } },
-                                ]}
-                            />
-                        )}
-                    >
-                        <div className={cx('avatar')} onClick={handleShowAvatarMenu}>
-                            <figure className={cx('image')}>
-                                <img alt="" src={require('~/assets/images/profile.jpg')} />
-                            </figure>
-                        </div>
-                    </Tippy>
+                                        {
+                                            id: 2,
+                                            title: 'Danh sách chặn',
+                                            prefixIcon: '\\e9d1',
+                                        },
+                                        {
+                                            id: 3,
+                                            title: 'Tải lên',
+                                            prefixIcon: '\\21',
+                                        },
+                                        {
+                                            id: 4,
+                                            line: true,
+                                        },
+                                        { id: 5, title: 'Đăng xuất', prefixIcon: '\\3a' },
+                                    ]}
+                                />
+                            )}
+                        >
+                            <div className={cx('avatar')} onClick={handleShowAvatarMenu}>
+                                <figure className={cx('image')}>
+                                    <img alt="" src={require('~/assets/images/profile.jpg')} />
+                                </figure>
+                            </div>
+                        </Tippy>
+                    </div>
                 </div>
             </div>
         </div>
