@@ -116,7 +116,6 @@ function Header() {
                             render={(attrs) => (
                                 <Menu
                                     {...attrs}
-                                    isSubMenu
                                     props={[
                                         {
                                             id: 0,
@@ -131,75 +130,7 @@ function Header() {
                                                 </svg>
                                             ),
                                             postfixIcon: '\\41',
-                                            subMenu: [
-                                                {
-                                                    id: 0,
-                                                    title: 'Chuyển bài mượt mà (Crossfade)',
-                                                    content: (
-                                                        <>
-                                                            <div className={cx('duration-bar', 'disabled')}>
-                                                                <div className={cx('slider-bar')}>
-                                                                    <div
-                                                                        aria-valuemax="15"
-                                                                        aria-valuemin="1"
-                                                                        aria-valuenow="8"
-                                                                        draggable="false"
-                                                                        role="slider"
-                                                                        className={cx('slider-handle')}
-                                                                        style={styles}
-                                                                    ></div>
-                                                                </div>
-                                                            </div>
-                                                            <p className={cx('time-crossfade')}>8 giây</p>
-                                                        </>
-                                                    ),
-                                                    postfixIcon: (
-                                                        <svg
-                                                            id="Layer_1"
-                                                            x="0px"
-                                                            y="0px"
-                                                            width="24px"
-                                                            height="15px"
-                                                            viewBox="0 0 24 15"
-                                                        >
-                                                            <path
-                                                                id="Rectangle-8"
-                                                                className={cx('st0')}
-                                                                d="M7.5,0h9C20.6,0,24,3.4,24,7.5l0,0c0,4.1-3.4,7.5-7.5,7.5h-9C3.4,15,0,11.6,0,7.5l0,0 C0,3.4,3.4,0,7.5,0z"
-                                                                style={{ fill: '#a0a0a0' }}
-                                                            ></path>
-                                                            <circle
-                                                                id="Oval-2"
-                                                                className={cx('st1')}
-                                                                cx="7.5"
-                                                                cy="7.5"
-                                                                r="6.5"
-                                                                style={{
-                                                                    fillRule: 'evenodd',
-                                                                    clipRule: 'evenodd',
-                                                                    fill: '#ffffff',
-                                                                }}
-                                                            ></circle>
-                                                        </svg>
-                                                    ),
-                                                },
-                                                {
-                                                    id: 1,
-                                                    title: 'Chuyển bài mượt mà (Crossfade)',
-                                                },
-                                                {
-                                                    id: 4,
-                                                    line: true,
-                                                },
-                                                {
-                                                    id: 2,
-                                                    title: 'Chuyển bài mượt mà (Crossfade)',
-                                                },
-                                                {
-                                                    id: 3,
-                                                    title: 'Chuyển bài mượt mà (Crossfade)',
-                                                },
-                                            ],
+                                            musicPlayer: true,
                                         },
                                         {
                                             id: 1,
@@ -215,6 +146,7 @@ function Header() {
                                                 </svg>
                                             ),
                                             postfixIcon: '\\41',
+                                            interface: true,
                                         },
                                         {
                                             id: 4,
